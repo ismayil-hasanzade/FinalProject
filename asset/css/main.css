@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a,
+li {
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  list-style: none;
+}
+
+* {
+  @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+  font-family: "Oswald", sans-serif;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  padding: 20px 0px;
+  height: 100vh;
+  background-image: url("https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/hero-01.jpg");
+}
+header nav {
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  align-items: center;
+  transition: 400ms;
+}
+header nav .search {
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 100px;
+  z-index: 1;
+  display: none;
+  padding: 10px 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav .search .searchIcon {
+  color: white;
+  z-index: 9999;
+}
+header nav .search input {
+  border: none;
+  background-color: inherit;
+  opacity: 90%;
+  outline: none;
+  width: 70%;
+  font-size: 30px;
+  color: white;
+}
+header nav .search input::placeholder {
+  color: white;
+  letter-spacing: -1px;
+}
+header nav .secretmenu.change {
+  display: flex;
+  background-color: white;
+}
+header nav .container {
+  padding: 0 20px;
+  flex-direction: column;
+  width: 100%;
+}
+header nav .container .menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+header nav .container .menu .logo img {
+  width: 100%;
+}
+header nav .container .menu .categorynav {
+  margin-left: 130px;
+}
+header nav .container .menu .categorynav ul {
+  display: flex;
+  gap: 14px;
+}
+header nav .container .menu .categorynav ul li {
+  transition: 300ms;
+  text-transform: uppercase;
+  font-size: 14px;
+  transform: scale(0.7, 1);
+  font-weight: 600;
+}
+header nav .container .menu .categorynav ul li:hover {
+  transform: scale(0.99, 1);
+  color: #c19a83;
+}
+header nav .container .menu .categorynav ul .magnitfy:hover {
+  color: black;
+  transform: scale(0.7, 1);
+}
+header nav .container .menu .pagenav ul {
+  display: flex;
+  gap: 5px;
+  font-size: 11px;
+  align-items: center;
+  position: relative;
+}
+header nav .container .menu .pagenav ul .basket {
+  color: #c19a83;
+  font-size: 20px;
+}
+header nav .container .menu .pagenav ul .login:hover,
+header nav .container .menu .pagenav ul .basketli:hover {
+  color: black;
+  transform: scale(0.7, 1);
+}
+header nav .container .menu .pagenav ul li {
+  text-transform: uppercase;
+  transform: scale(0.7, 1);
+  transition: 300ms;
+}
+header nav .container .menu .pagenav ul li:hover {
+  transform: scale(0.99, 1);
+  color: #c19a83;
+}
+header nav .container .menu .pagenav ul li p {
+  top: -20px;
+  right: -18px;
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: #c19a83;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header nav .container .menu .fa-bars {
+  display: none;
+}
+header nav .container .menu .pageNavIcon {
+  display: none;
+}
+header nav .secretmenu {
+  transition: 400ms;
+  padding: 0 20px;
+  width: 100%;
+  background-color: white;
+  display: none;
+  font-size: 13.68px;
+  justify-content: space-between;
+}
+header nav .secretmenu .categorynav {
+  width: 49%;
+}
+header nav .secretmenu .categorynav ul li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.308);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+header nav .secretmenu .pagenav {
+  width: 49%;
+}
+header nav .secretmenu .pagenav ul li {
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.308);
+  padding: 10px;
+}
+header nav .secretmenu .pagenav ul .basketli div {
+  position: relative;
+  width: 40px;
+}
+header nav .secretmenu .pagenav ul .basketli div i {
+  color: #c19a83;
+  font-size: 18px;
+}
+header nav .secretmenu .pagenav ul .basketli div p {
+  position: absolute;
+  top: -9px;
+  right: 5px;
+  border-radius: 50%;
+  background-color: #c19a83;
+  width: 15px;
+  height: 15px;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+}
+
+@media only screen and (max-width: 768px) {
+  header nav .container .menu .categorynav,
+  header nav .container .menu .pagenav {
+    display: none;
+  }
+  header nav .container .menu .barsicon {
+    display: block;
+  }
+}/*# sourceMappingURL=main.css.map */
