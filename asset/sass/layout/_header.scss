@@ -2,15 +2,17 @@
   max-width: 1300px;
   margin: 0 auto;
   display: flex;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 header {
+  display: flex;
+  flex-direction: column;
   padding: 20px 0px;
   height: 100vh;
   background-image: url("https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/hero-01.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 
   nav {
     .search {
@@ -28,8 +30,6 @@ header {
       .searchIcon {
         color: white;
         z-index: 9999;
-        
-
       }
       input {
         border: none;
@@ -200,6 +200,35 @@ header {
       }
     }
   }
+  .about {
+    .container {
+      margin-top: 180px;
+      flex-direction: column;
+      align-items: flex-start;
+      .about_header {
+        letter-spacing: 2px;
+        font-weight: 400;
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+      }
+      .about_hero {
+        font-size: 65px;
+        font-weight: 700;
+      }
+      .about_end {
+        font-weight: 400;
+        font-size: 22px;
+        margin: 10px 0px 30px 0;
+      }
+      .about_button {
+        text-transform: uppercase;
+        color: white;
+        background-color: black;
+        font-size: 15px;
+        padding: 15px 25px;
+      }
+    }
+  }
 }
 @media only screen and (max-width: 768px) {
   header {
@@ -213,7 +242,6 @@ header {
           .barsicon {
             display: block;
           }
-
         }
       }
     }

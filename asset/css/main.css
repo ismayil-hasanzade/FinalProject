@@ -21,16 +21,18 @@ li {
   max-width: 1300px;
   margin: 0 auto;
   display: flex;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 header {
+  display: flex;
+  flex-direction: column;
   padding: 20px 0px;
   height: 100vh;
   background-image: url("https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/hero-01.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 header nav {
   display: flex;
@@ -195,6 +197,33 @@ header nav .secretmenu .pagenav ul .basketli div p {
   display: grid;
   place-items: center;
   font-size: 11px;
+}
+header .about .container {
+  margin-top: 180px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+header .about .container .about_header {
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+header .about .container .about_hero {
+  font-size: 65px;
+  font-weight: 700;
+}
+header .about .container .about_end {
+  font-weight: 400;
+  font-size: 22px;
+  margin: 10px 0px 30px 0;
+}
+header .about .container .about_button {
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  font-size: 15px;
+  padding: 15px 25px;
 }
 
 @media only screen and (max-width: 768px) {
