@@ -18,9 +18,10 @@ li {
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1450px;
   margin: 0 auto;
   display: flex;
+  padding: 0 20px;
 }
 
 header {
@@ -75,7 +76,6 @@ header nav .secretmenu.change {
   background-color: white;
 }
 header nav .container {
-  padding: 0 20px;
   flex-direction: column;
   width: 100%;
 }
@@ -154,6 +154,7 @@ header nav .container .menu .pageNavIcon {
   display: none;
 }
 header nav .secretmenu {
+  z-index: 1;
   transition: 400ms;
   padding: 0 20px;
   width: 100%;
@@ -227,6 +228,9 @@ header .about .container .about_button {
 }
 
 @media only screen and (max-width: 768px) {
+  header .about .container .about_hero {
+    font-size: 40px;
+  }
   header nav .container .menu .categorynav,
   header nav .container .menu .pagenav {
     display: none;
@@ -234,4 +238,44 @@ header .about .container .about_button {
   header nav .container .menu .barsicon {
     display: block;
   }
+}
+main #logos {
+  padding: 40px 0px;
+}
+main #logos .container .cards {
+  width: 100%;
+}
+main #logos .container .cards .slick-arrow {
+  display: none !important;
+}
+main #logos .container .cards .slick-dots {
+  margin-top: 20px;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  list-style: none;
+}
+main #logos .container .cards .slick-dots .slick-active button {
+  background-color: #c19a83;
+  transform: scale(1.2);
+}
+main #logos .container .cards .slick-dots li button {
+  border-radius: 50%;
+  font-size: 0px;
+  width: 6px;
+  height: 6px;
+  border: none;
+  background-color: #bab4b1;
+  transition: 400ms;
+}
+main #logos .container .cards .card {
+  padding: 10px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  height: 110px;
+  margin: 0 20px;
+}
+main #logos .container .cards .card svg {
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */

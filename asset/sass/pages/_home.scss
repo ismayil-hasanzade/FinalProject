@@ -1,0 +1,49 @@
+main {
+  #logos {
+    padding: 40px 0px;
+    .container {
+      .cards {
+        width: 100%;
+
+        .slick-arrow {
+          display: none !important;
+        }
+        .slick-dots {
+          margin-top: 20px;
+          display: flex;
+          gap: 6px;
+          justify-content: center;
+          list-style: none;
+          .slick-active {
+            button {
+              background-color: #c19a83;
+              transform: scale(1.2);
+            }
+          }
+          li {
+            button {
+              border-radius: 50%;
+              font-size: 0px;
+              width: 6px;
+              height: 6px;
+              border: none;
+              background-color: #bab4b1;
+              transition: 400ms;
+            }
+          }
+        }
+        .card {
+          padding: 10px;
+          display: grid;
+          place-items: center;
+          border: 1px solid rgb(0, 0, 0, 0.07);
+          height: 110px;
+          margin: 0 20px;
+          svg {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

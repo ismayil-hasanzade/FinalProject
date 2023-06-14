@@ -1,7 +1,9 @@
 .container {
-  max-width: 1300px;
+  max-width: 1450px;
   margin: 0 auto;
   display: flex;
+  padding: 0 20px;
+
 }
 header {
   display: flex;
@@ -55,7 +57,6 @@ header {
       background-color: white;
     }
     .container {
-      padding: 0 20px;
       flex-direction: column;
 
       width: 100%;
@@ -147,6 +148,7 @@ header {
       }
     }
     .secretmenu {
+      z-index: 1;
       transition: 400ms;
       padding: 0 20px;
       width: 100%;
@@ -232,6 +234,13 @@ header {
 }
 @media only screen and (max-width: 768px) {
   header {
+    .about {
+      .container {
+        .about_hero {
+          font-size: 40px;
+        }
+      }
+    }
     nav {
       .container {
         .menu {
