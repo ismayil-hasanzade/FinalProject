@@ -251,6 +251,116 @@ header .about .container .about_button:hover {
     display: block;
   }
 }
+footer {
+  padding-top: 50px;
+  border-top: 1px solid rgba(0, 0, 0, 0.084);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.084);
+  background-color: #f1f2f2;
+}
+footer .container {
+  justify-content: space-between;
+}
+footer .container .categorys {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+footer .container .categorys ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+footer .container .categorys ul :first-child {
+  margin-bottom: 50px;
+  color: black;
+  font-size: 12px;
+}
+footer .container .categorys ul li {
+  cursor: pointer;
+  transition: 400ms;
+  font-size: 15px;
+  color: #c19a83;
+}
+footer .container .categorys ul li:hover {
+  color: black;
+}
+footer .container .categorys .subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+footer .container .categorys .subscribe p {
+  font-size: 12px;
+  margin-bottom: 50px;
+}
+footer .container .categorys .subscribe input {
+  padding: 10px;
+  outline: none;
+  font-size: 13.25px;
+  border-color: rgba(0, 0, 0, 0.121);
+  margin-bottom: 20px;
+}
+footer .container .categorys .subscribe .subscribe_button {
+  cursor: pointer;
+  padding: 15px 12px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+footer .container .categorys .subscribe .subscribe_button:hover {
+  background-color: #c19a83;
+}
+footer hr {
+  margin-top: 100px;
+  color: rgba(0, 0, 0, 0.084);
+}
+footer .container .content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px 0;
+  color: #8d8d8d;
+}
+footer .container .content .copyright {
+  font-weight: 600;
+}
+footer .container .content .socialmedia {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  color: black;
+}
+footer .container .content .socialmedia a {
+  transition: 300ms;
+}
+footer .container .content .socialmedia a:hover {
+  color: #c19a83;
+}
+
+@media only screen and (max-width: 428px) {
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .container .content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+  }
+  footer .container .categorys {
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+  }
+  footer .container .categorys .subscribe {
+    margin-top: 20px;
+  }
+}
 main #logos {
   padding: 40px 0px;
 }
@@ -470,6 +580,169 @@ main #featuredproducts .container .categorys .box .productabout .colors .bronze 
 main #featuredproducts .container .categorys .box .productabout .colors .gold {
   background-color: #dabca2;
 }
+main #brandcollection {
+  padding-bottom: 20px;
+}
+main #brandcollection .container .maindiv {
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.398), rgba(0, 0, 0, 0.398)), url("https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/bg-01.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 66%;
+  display: flex;
+  place-items: jus;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  height: 651px;
+}
+main #brandcollection .container .maindiv h5 {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+main #brandcollection .container .maindiv h3 {
+  font-size: 45px;
+  max-width: 70%;
+  font-weight: 700;
+}
+main #brandcollection .container .maindiv span {
+  font-size: 22px;
+}
+main #brandcollection .container .mainproduct {
+  width: 37%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+main #brandcollection .container .mainproduct img {
+  width: 50%;
+}
+main #brandcollection .container .mainproduct .productabout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+main #brandcollection .container .mainproduct .productabout .productname {
+  font-size: 22px;
+  font-weight: 400;
+}
+main #brandcollection .container .mainproduct .productabout .options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+main #brandcollection .container .mainproduct .productabout .options .price {
+  display: flex;
+  gap: 15px;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6117647059);
+}
+main #brandcollection .container .mainproduct .productabout .options .optionsbutton {
+  color: white;
+  padding: 15px;
+  border: 1px solid black;
+  background-color: black;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+main #elementors {
+  padding-bottom: 20px;
+}
+main #elementors .container {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+main #elementors .container .box {
+  background-color: #f1f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 32%;
+  padding: 50px 63px;
+  margin-bottom: 20px;
+}
+main #elementors .container .box .stars {
+  color: #f0ad4e;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+main #elementors .container .box .about {
+  margin: 0;
+  font-size: 19.5px;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
+}
+main #elementors .container .box .name {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #8d8d8d;
+  font-weight: 600;
+}
+main #bestproducts {
+  padding: 60px 0;
+}
+main #bestproducts .container {
+  flex-direction: column;
+  align-items: center;
+}
+main #bestproducts .container .head {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.61);
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+main #bestproducts .container h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+main #bestproducts .container .line {
+  width: 50px;
+  height: 1.5px;
+  background-color: #c19a83;
+}
+main #bestproducts .container .categorys {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+main #bestproducts .container .categorys .box {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 24.5%;
+  padding: 20px 25px;
+  text-align: center;
+}
+main #bestproducts .container .categorys .box i {
+  font-size: 30px;
+  color: #c19a83;
+}
+main #bestproducts .container .categorys .box span {
+  font-size: 22px;
+  font-weight: 400;
+}
+main #bestproducts .container .categorys .box p {
+  color: rgba(0, 0, 0, 0.61);
+}
 
 @media only screen and (max-width: 768px) {
   main #shopcategory .container h2 {
@@ -486,6 +759,35 @@ main #featuredproducts .container .categorys .box .productabout .colors .gold {
     width: 48.5%;
     margin-bottom: 10px;
   }
+  main #brandcollection .container .maindiv {
+    height: 408px;
+  }
+  main #brandcollection .container .maindiv h5 {
+    font-size: 10.9px;
+  }
+  main #brandcollection .container .maindiv span {
+    font-size: 20px;
+  }
+  main #brandcollection .container .maindiv h3 {
+    font-size: 32px;
+  }
+  main #brandcollection .container .mainproduct .productabout .productame {
+    font-size: 20px;
+  }
+  main #brandcollection .container .mainproduct .productabout .options {
+    flex-direction: column;
+  }
+  main #elementors .container .box {
+    padding: 30px 10px;
+    width: 48%;
+  }
+  main #bestproducts .container h2 {
+    font-size: 32px;
+  }
+  main #bestproducts .container .categorys .box {
+    width: 48.5%;
+    margin-bottom: 10px;
+  }
 }
 @media only screen and (max-width: 428px) {
   main #shopcategory .container .categorys .box {
@@ -493,6 +795,40 @@ main #featuredproducts .container .categorys .box .productabout .colors .gold {
     margin-bottom: 10px;
   }
   main #featuredproducts .container .categorys .box {
+    width: 100%;
+  }
+  main #brandcollection .container {
+    flex-direction: column;
+  }
+  main #brandcollection .container .maindiv {
+    width: 100%;
+  }
+  main #brandcollection .container .maindiv h5 {
+    font-size: 10.9px;
+  }
+  main #brandcollection .container .maindiv span {
+    font-size: 20px;
+  }
+  main #brandcollection .container .maindiv h3 {
+    font-size: 25px;
+    max-width: 100%;
+  }
+  main #brandcollection .container .mainproduct {
+    width: 100%;
+  }
+  main #brandcollection .container .mainproduct .productabout .productame {
+    font-size: 20px;
+  }
+  main #brandcollection .container .mainproduct .productabout .options {
+    flex-direction: row;
+  }
+  main #brandcollection .container .mainproduct .productabout .options .optionsbutton {
+    padding: 15px 5px;
+  }
+  main #elementors .container .box {
+    width: 100%;
+  }
+  main #bestproducts .container .categorys .box {
     width: 100%;
   }
 }/*# sourceMappingURL=main.css.map */

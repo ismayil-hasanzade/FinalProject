@@ -142,7 +142,6 @@ main {
         flex-wrap: wrap;
         justify-content: space-between;
         .box {
-
           display: flex;
           flex-direction: column;
           position: relative;
@@ -151,7 +150,7 @@ main {
           margin-bottom: 20px;
           &:hover {
             .options {
-             opacity: 100%;
+              opacity: 100%;
             }
           }
           img {
@@ -233,6 +232,178 @@ main {
       }
     }
   }
+  #brandcollection {
+    padding-bottom: 20px;
+
+    .container {
+      .maindiv {
+        margin-bottom: 20px;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.398),
+            rgba(0, 0, 0, 0.398)
+          ),
+          url("https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/bg-01.jpg");
+        background-size: cover;
+        background-position: center;
+        width: 66%;
+        display: flex;
+        place-items: jus;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        height: 651px;
+        h5 {
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 2px;
+        }
+        h3 {
+          font-size: 45px;
+          max-width: 70%;
+          font-weight: 700;
+        }
+        span {
+          font-size: 22px;
+        }
+      }
+      .mainproduct {
+        width: 37%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        img {
+          width: 50%;
+        }
+        .productabout {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          .productname {
+            font-size: 22px;
+            font-weight: 400;
+          }
+          .options {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .price {
+              display: flex;
+              gap: 15px;
+              font-size: 15px;
+              color: #0000009c;
+            }
+            .optionsbutton {
+              color: white;
+              padding: 15px;
+              border: 1px solid black;
+              background-color: black;
+              text-transform: uppercase;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+  #elementors {
+    padding-bottom: 20px;
+    .container {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .box {
+        background-color: #f1f2f2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 32%;
+
+        padding: 50px 63px;
+        margin-bottom: 20px;
+        .stars {
+          color: #f0ad4e;
+          font-size: 15px;
+          margin-bottom: 15px;
+        }
+        .about {
+          margin: 0;
+          font-size: 19.5px;
+          text-align: center;
+          margin-bottom: 20px;
+          letter-spacing: -0.3px;
+        }
+        .name {
+          font-size: 12px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: #8d8d8d;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  #bestproducts {
+    padding: 60px 0;
+    .container {
+      flex-direction: column;
+      align-items: center;
+      .head {
+        font-size: 12px;
+        letter-spacing: 2px;
+        color: rgba(0, 0, 0, 0.61);
+        font-weight: 400;
+        margin-bottom: 15px;
+      }
+      h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .line {
+        width: 50px;
+        height: 1.5px;
+        background-color: #c19a83;
+      }
+      .categorys {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        .box {
+          margin-bottom: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 15px;
+          width: 24.5%;
+          padding: 20px 25px;
+          text-align: center;
+          i {
+            font-size: 30px;
+            color: #c19a83;
+          }
+          span {
+            font-size: 22px;
+            font-weight: 400;
+          }
+          p {
+            color: rgba(0, 0, 0, 0.61);
+          }
+        }
+      }
+    }
+  }
 }
 @media only screen and (max-width: 768px) {
   main {
@@ -249,7 +420,7 @@ main {
         }
       }
     }
-    #featuredproducts{
+    #featuredproducts {
       .container {
         h2 {
           font-size: 32px;
@@ -262,7 +433,54 @@ main {
         }
       }
     }
+    #brandcollection {
+      .container {
+        .maindiv {
+          height: 408px;
+          h5 {
+            font-size: 10.9px;
+          }
+          span {
+            font-size: 20px;
+          }
+          h3 {
+            font-size: 32px;
+          }
+        }
+        .mainproduct {
+          .productabout {
+            .productame {
+              font-size: 20px;
+            }
+            .options {
+              flex-direction: column;
+            }
+          }
+        }
+      }
+    }
+    #elementors {
+      .container {
+        .box {
+          padding: 30px 10px;
 
+          width: 48%;
+        }
+      }
+    }
+    #bestproducts {
+      .container {
+        h2 {
+          font-size: 32px;
+        }
+        .categorys {
+          .box {
+            width: 48.5%;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
   }
 }
 @media only screen and (max-width: 428px) {
@@ -278,6 +496,54 @@ main {
       }
     }
     #featuredproducts {
+      .container {
+        .categorys {
+          .box {
+            width: 100%;
+          }
+        }
+      }
+    }
+    #brandcollection {
+      .container {
+        flex-direction: column;
+        .maindiv {
+          width: 100%;
+          h5 {
+            font-size: 10.9px;
+          }
+          span {
+            font-size: 20px;
+          }
+          h3 {
+            font-size: 25px;
+            max-width: 100%;
+          }
+        }
+        .mainproduct {
+          width: 100%;
+          .productabout {
+            .productame {
+              font-size: 20px;
+            }
+            .options {
+              flex-direction: row;
+              .optionsbutton {
+                padding: 15px 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+    #elementors {
+      .container {
+        .box {
+          width: 100%;
+        }
+      }
+    }
+    #bestproducts {
       .container {
         .categorys {
           .box {

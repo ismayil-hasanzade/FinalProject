@@ -1,0 +1,118 @@
+footer {
+  padding-top: 50px;
+  border-top: 1px solid rgba(0, 0, 0, 0.084);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.084);
+
+  background-color: #f1f2f2;
+  .container {
+    justify-content: space-between;
+    .categorys {
+      display: flex;
+      justify-content: space-between;
+
+      width: 50%;
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        :first-child {
+          margin-bottom: 50px;
+          color: black;
+          font-size: 12px;
+        }
+        li {
+          cursor: pointer;
+          transition: 400ms;
+          font-size: 15px;
+          color: #c19a83;
+          &:hover {
+            color: black;
+          }
+        }
+      }
+      .subscribe {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        p {
+          font-size: 12px;
+          margin-bottom: 50px;
+        }
+        input {
+          padding: 10px;
+          outline: none;
+          font-size: 13.25px;
+          border-color: rgba(0, 0, 0, 0.121);
+          margin-bottom: 20px;
+        }
+        .subscribe_button {
+          cursor: pointer;
+          padding: 15px 12px;
+          background-color: black;
+          color: white;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 13px;
+          &:hover {
+            background-color: #c19a83;
+          }
+        }
+      }
+    }
+  }
+  hr {
+    margin-top: 100px;
+    color: rgba(0, 0, 0, 0.084);
+  }
+  .container {
+    .content {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 30px 0;
+      color: #8d8d8d;
+      .copyright {
+        font-weight: 600;
+      }
+      .socialmedia {
+        display: flex;
+        gap: 20px;
+        font-size: 20px;
+        color: black;
+        a {
+            transition: 300ms;
+         &:hover{
+            color:#c19a83;
+         }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 428px) {
+    footer{
+        .container{
+            flex-direction: column;
+            align-items: center;
+            .content{
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                gap: 20px;
+            }
+            .categorys{
+                width: 100%;
+                align-items: center;
+                
+                flex-direction: column;
+                gap: 30px;
+               
+                .subscribe{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
