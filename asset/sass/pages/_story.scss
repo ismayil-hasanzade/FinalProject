@@ -1,0 +1,292 @@
+main {
+  #promotion {
+    background-image: url("https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/about-01.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+    width: 100%;
+  }
+  #ourteam {
+    padding: 80px 0;
+    .container {
+      justify-content: space-around;
+      div {
+        width: 50%;
+      }
+      .aboutus {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 50px;
+        padding-left: 30px;
+        padding-top: 20px;
+
+        p {
+          color: rgba(0, 0, 0, 0.61);
+          font-size: 12px;
+          letter-spacing: 2px;
+        }
+        h2 {
+          font-size: 45px;
+          max-width: 70%;
+        }
+      }
+      .about {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        h4 {
+          font-size: 22px;
+          font-weight: 400;
+        }
+        p,
+        span {
+          color: #0000009c;
+          max-width: 80%;
+          letter-spacing: 0.8px;
+        }
+      }
+    }
+  }
+  #carried {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+    height: 90vh;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.349) 100%,
+        rgba(0, 0, 0, 0.0349) 100%
+      ),
+      url("https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/bg-02.jpg");
+
+    .container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      color: white;
+      .line {
+        width: 50px;
+        background-color: white;
+        margin-bottom: 30px;
+        height: 1px;
+      }
+      .extreme {
+        font-size: 45px;
+        font-weight: 700;
+        max-width: 40%;
+        text-align: center;
+      }
+    }
+  }
+  #howit {
+    padding: 80px 0;
+    height: 60vh;
+    .container {
+      flex-direction: column;
+      align-items: center;
+      p {
+        font-size: 12px;
+        letter-spacing: 2px;
+        color: rgba(0, 0, 0, 0.61);
+        font-weight: 400;
+        margin-bottom: 15px;
+      }
+      h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .line {
+        width: 50px;
+        height: 1.5px;
+        background-color: #c19a83;
+        margin-bottom: 25px;
+      }
+      span {
+        text-align: center;
+        max-width: 60%;
+        color: rgba(0, 0, 0, 0.61);
+        font-size: 12px;
+        letter-spacing: 2px;
+      }
+    }
+  }
+  #about_founder {
+    background-color: #f1f2f2;
+    padding: 80px 0;
+    height: 60vh;
+    position: relative;
+    .container {
+      flex-direction: column;
+      justify-content: flex-start;
+      div{
+        width: 50%;
+        p {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: rgba(0, 0, 0, 0.61);
+            font-weight: 400;
+            margin-bottom: 15px;
+          }
+          h2 {
+            font-size: 25px;
+            font-weight: 700;
+            margin-bottom: 20px;
+          }
+          .line {
+            width: 50px;
+            height: 1.5px;
+            background-color: #c19a83;
+            margin-bottom: 25px;
+          }
+          span {
+            
+            width: 20%;
+            color: rgba(0, 0, 0, 0.61);
+            font-size: 12px;
+            letter-spacing: 2px;
+          }
+      }
+     
+      img {
+        width: 40%;
+        height: 750px;
+        position: absolute;
+        right: 0;
+        top: -50%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  main {
+    #ourteam {
+      .container {
+        flex-direction: column;
+        div {
+          width: 100%;
+        }
+        .aboutus {
+          padding: 0;
+          margin: 0;
+          margin-bottom: 30px;
+          h2 {
+            max-width: 100%;
+          }
+        }
+        .about {
+          p,
+          span {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+    #carried {
+      .container {
+        .extreme {
+          font-size: 32px;
+          max-width: 80%;
+        }
+      }
+    }
+    #howit {
+      .container {
+        h2 {
+          font-size: 32px;
+        }
+        span {
+          max-width: 90%;
+        }
+      }
+    }
+    #about_founder {
+      .container {
+        h2 {
+          font-size: 20px;
+        }
+        img {
+          height: 600px;
+          top: -40%;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 428px) {
+  main {
+    #ourteam {
+        .container {
+          .aboutus {
+            h2 {
+              
+              font-size: 25px;
+            }
+          }
+          .about {
+            h4{
+                font-size: 20px;
+            }
+            p,
+            span {
+              
+              font-size: 13.6px;
+            }
+          }
+        }
+      }
+    #carried {
+      .container {
+        .extreme {
+          font-size: 22px;
+          max-width: 100%;
+        }
+      }
+    }
+    #howit {
+      .container {
+        h2 {
+          font-size: 30px;
+        }
+        span {
+          max-width: 100%;
+        }
+      }
+    }
+    #about_founder {
+      height: min-content;
+      .container {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            width: 100%;
+          h2 {
+            font-size: 20px;
+          }
+          span {
+            width: 100%;
+            text-align: center;
+          }
+        }
+
+        img {
+          position: static;
+            height: 400px;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

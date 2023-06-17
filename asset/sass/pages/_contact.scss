@@ -1,0 +1,188 @@
+main {
+  #featuredproducts.contact {
+    background-color: #f2f3f3;
+    .container {
+      h2 {
+        font-size: 65px;
+        font-weight: 700;
+        letter-spacing: -4px;
+      }
+      .categorys {
+        .box {
+          box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.05);
+          height: 232px;
+          padding: 50px;
+          border-radius: 25px;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          width: 32%;
+          background-color: white;
+          transition: 400ms;
+          &:hover {
+            box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.15);
+          }
+          i {
+            font-size: 50px;
+            color: #c19a83;
+            margin-bottom: 15px;
+          }
+          span {
+            margin-bottom: 10px;
+            font-size: 1.6667rem;
+            font-weight: 700;
+            line-height: 1.1em;
+          }
+          p {
+            color: #0000009c;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+  #featuredproducts.getintouch {
+    background-color: #f2f3f3;
+
+    .container {
+      form {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        align-items: flex-start;
+        justify-content: center;
+
+        textarea {
+          background-color: #f2f3f3;
+
+          color: #666;
+          border: 1px solid #66666622;
+          outline: none;
+          padding: 0.6em;
+          width: 100%;
+          font-size: 20px;
+          &:focus {
+            background-color: white;
+          }
+        }
+        div {
+          width: 100%;
+          position: relative;
+        }
+        label {
+          font-weight: 700;
+          color: #0000009c;
+          position: absolute;
+          top: -20px;
+          sup {
+            color: red;
+            font-size: 14px;
+          }
+        }
+        input {
+          background-color: #f2f3f3;
+
+          color: #666;
+          border: 1px solid #66666622;
+          outline: none;
+          padding: 0.6em;
+          width: 100%;
+          font-size: 20px;
+          &:focus {
+            background-color: white;
+          }
+        }
+        .name {
+          margin-bottom: 30px;
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          gap: 20px;
+          p {
+            color: #0000009c;
+            font-size: 12.7px;
+          }
+          .first {
+            width: 50%;
+            position: relative;
+            label {
+              position: absolute;
+            }
+          }
+          .last {
+            width: 50%;
+          }
+        }
+        .email {
+          margin-bottom: 40px;
+        }
+        button {
+          padding: 15px 20px;
+          border: none;
+          text-transform: uppercase;
+          color: white;
+          background-color: black;
+          margin-top: 20px;
+          cursor: pointer;
+          transition: 300ms;
+          &:hover {
+            background-color: #c19a83;
+          }
+        }
+      }
+    }
+  }
+  #map{
+    iframe{
+        width: 100%;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  main {
+    #featuredproducts.contact {
+      .container {
+        h2 {
+          font-size: 40px;
+          letter-spacing: -2px;
+        }
+        .categorys {
+          .box {
+            width: 49%;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 428px) {
+  main {
+    #featuredproducts.contact {
+      .container {
+        h2 {
+          font-size: 30px;
+          letter-spacing: -1px;
+        }
+        .categorys {
+          .box {
+            width: 100%;
+          }
+        }
+      }
+    }
+    #featuredproducts.getintouch{
+        .container{
+            form{
+                .name{
+                    flex-direction: column;
+                    
+                    .first,.last{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+  }
+}

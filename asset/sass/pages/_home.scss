@@ -166,6 +166,7 @@ main {
             left: 20px;
             top: 20px;
             background-color: white;
+            z-index: 1;
           }
           .options {
             transition: 300ms;
@@ -176,6 +177,7 @@ main {
             right: 20px;
             top: 10px;
             opacity: 0;
+            z-index: 1;
 
             div {
               background-color: white;

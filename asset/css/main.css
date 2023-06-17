@@ -12,6 +12,10 @@ li {
   list-style: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
   font-family: "Oswald", sans-serif;
@@ -96,14 +100,14 @@ header nav .container .menu .categorynav ul {
   gap: 14px;
 }
 header nav .container .menu .categorynav ul li {
-  transition: 300ms;
+  transition: 400ms;
   text-transform: uppercase;
   font-size: 14px;
   transform: scale(0.7, 1);
   font-weight: 600;
 }
 header nav .container .menu .categorynav ul li:hover {
-  transform: scale(0.99, 1);
+  transform: scale(1.1, 1.2);
   color: #c19a83;
 }
 header nav .container .menu .categorynav ul .magnitfy:hover {
@@ -120,6 +124,8 @@ header nav .container .menu .pagenav ul {
 header nav .container .menu .pagenav ul .basket {
   color: #c19a83;
   font-size: 20px;
+  transition: 400ms;
+  cursor: pointer;
 }
 header nav .container .menu .pagenav ul .login:hover,
 header nav .container .menu .pagenav ul .basketli:hover {
@@ -129,10 +135,10 @@ header nav .container .menu .pagenav ul .basketli:hover {
 header nav .container .menu .pagenav ul li {
   text-transform: uppercase;
   transform: scale(0.7, 1);
-  transition: 300ms;
+  transition: 400ms;
 }
 header nav .container .menu .pagenav ul li:hover {
-  transform: scale(0.99, 1);
+  transform: scale(1.1, 1.2);
   color: #c19a83;
 }
 header nav .container .menu .pagenav ul li p {
@@ -229,7 +235,41 @@ header .about .container .about_button {
   cursor: pointer;
 }
 header .about .container .about_button:hover {
-  background-color: #C19A83;
+  background-color: #c19a83;
+}
+header .shopping_cart {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.349) 100%, rgba(0, 0, 0, 0.0349) 100%);
+  z-index: 99;
+  display: none;
+  width: 100%;
+  height: 100vh;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  justify-content: flex-end;
+}
+header .shopping_cart .shoppingmenu {
+  cursor: default;
+  display: flex;
+  width: 30%;
+  background-color: white;
+}
+header .shopping_cart .shoppingmenu .shoppingmenu_header {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.8274509804);
+  font-weight: 600;
+  letter-spacing: -0.6px;
+}
+header .shopping_cart .shoppingmenu .shoppingmenu_header i {
+  cursor: pointer;
+  font-size: 20px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -254,7 +294,6 @@ header .about .container .about_button:hover {
 footer {
   padding-top: 50px;
   border-top: 1px solid rgba(0, 0, 0, 0.084);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.084);
   background-color: #f1f2f2;
 }
 footer .container {
@@ -295,6 +334,7 @@ footer .container .categorys .subscribe p {
   margin-bottom: 50px;
 }
 footer .container .categorys .subscribe input {
+  width: 100%;
   padding: 10px;
   outline: none;
   font-size: 13.25px;
@@ -313,9 +353,12 @@ footer .container .categorys .subscribe .subscribe_button {
 footer .container .categorys .subscribe .subscribe_button:hover {
   background-color: #c19a83;
 }
-footer hr {
+footer .line {
+  width: 100%;
+  height: 1px;
   margin-top: 100px;
-  color: rgba(0, 0, 0, 0.084);
+  list-style: none;
+  background-color: rgba(0, 0, 0, 0.084);
 }
 footer .container .content {
   display: flex;
@@ -521,6 +564,7 @@ main #featuredproducts .container .categorys .box .sale {
   left: 20px;
   top: 20px;
   background-color: white;
+  z-index: 1;
 }
 main #featuredproducts .container .categorys .box .options {
   transition: 300ms;
@@ -531,6 +575,7 @@ main #featuredproducts .container .categorys .box .options {
   right: 20px;
   top: 10px;
   opacity: 0;
+  z-index: 1;
 }
 main #featuredproducts .container .categorys .box .options div {
   background-color: white;
@@ -830,5 +875,733 @@ main #bestproducts .container .categorys .box p {
   }
   main #bestproducts .container .categorys .box {
     width: 100%;
+  }
+}
+#header {
+  background-color: white;
+  height: min-content;
+  background-image: none;
+  border: 1px solid rgba(0, 0, 0, 0.141);
+}
+
+main #featuredproducts.featuredproducts .container .categorys .box {
+  overflow: hidden;
+}
+main #featuredproducts.featuredproducts .container .categorys .box img {
+  transition: 300ms;
+  margin-bottom: 18px;
+}
+main #featuredproducts.featuredproducts .container .categorys .box img:hover {
+  transform: scale(1.1);
+}
+main #categoryabout {
+  padding: 30px 0;
+}
+main #categoryabout .container {
+  flex-direction: column;
+  align-items: flex-start;
+}
+main #categoryabout .container .page {
+  display: flex;
+  gap: 4px;
+  color: #777777;
+  font-size: 0.92em;
+  margin-bottom: 1em;
+  letter-spacing: -0.9px;
+  font-weight: 300;
+}
+main #categoryabout .container h2 {
+  font-size: 65px;
+  font-weight: 400;
+  margin-bottom: 1em;
+  letter-spacing: -2.9px;
+}
+main #categoryabout .container p {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.61);
+}
+
+main #promotion {
+  background-image: url("https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/about-01.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 90vh;
+  width: 100%;
+}
+main #ourteam {
+  padding: 80px 0;
+}
+main #ourteam .container {
+  justify-content: space-around;
+}
+main #ourteam .container div {
+  width: 50%;
+}
+main #ourteam .container .aboutus {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 50px;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+main #ourteam .container .aboutus p {
+  color: rgba(0, 0, 0, 0.61);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+main #ourteam .container .aboutus h2 {
+  font-size: 45px;
+  max-width: 70%;
+}
+main #ourteam .container .about {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main #ourteam .container .about h4 {
+  font-size: 22px;
+  font-weight: 400;
+}
+main #ourteam .container .about p,
+main #ourteam .container .about span {
+  color: rgba(0, 0, 0, 0.6117647059);
+  max-width: 80%;
+  letter-spacing: 0.8px;
+}
+main #carried {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  height: 90vh;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.349) 100%, rgba(0, 0, 0, 0.0349) 100%), url("https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/bg-02.jpg");
+}
+main #carried .container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: white;
+}
+main #carried .container .line {
+  width: 50px;
+  background-color: white;
+  margin-bottom: 30px;
+  height: 1px;
+}
+main #carried .container .extreme {
+  font-size: 45px;
+  font-weight: 700;
+  max-width: 40%;
+  text-align: center;
+}
+main #howit {
+  padding: 80px 0;
+  height: 60vh;
+}
+main #howit .container {
+  flex-direction: column;
+  align-items: center;
+}
+main #howit .container p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.61);
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+main #howit .container h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+main #howit .container .line {
+  width: 50px;
+  height: 1.5px;
+  background-color: #c19a83;
+  margin-bottom: 25px;
+}
+main #howit .container span {
+  text-align: center;
+  max-width: 60%;
+  color: rgba(0, 0, 0, 0.61);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+main #about_founder {
+  background-color: #f1f2f2;
+  padding: 80px 0;
+  height: 60vh;
+  position: relative;
+}
+main #about_founder .container {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+main #about_founder .container div {
+  width: 50%;
+}
+main #about_founder .container div p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.61);
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+main #about_founder .container div h2 {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+main #about_founder .container div .line {
+  width: 50px;
+  height: 1.5px;
+  background-color: #c19a83;
+  margin-bottom: 25px;
+}
+main #about_founder .container div span {
+  width: 20%;
+  color: rgba(0, 0, 0, 0.61);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+main #about_founder .container img {
+  width: 40%;
+  height: 750px;
+  position: absolute;
+  right: 0;
+  top: -50%;
+}
+
+@media only screen and (max-width: 768px) {
+  main #ourteam .container {
+    flex-direction: column;
+  }
+  main #ourteam .container div {
+    width: 100%;
+  }
+  main #ourteam .container .aboutus {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  main #ourteam .container .aboutus h2 {
+    max-width: 100%;
+  }
+  main #ourteam .container .about p,
+  main #ourteam .container .about span {
+    max-width: 100%;
+  }
+  main #carried .container .extreme {
+    font-size: 32px;
+    max-width: 80%;
+  }
+  main #howit .container h2 {
+    font-size: 32px;
+  }
+  main #howit .container span {
+    max-width: 90%;
+  }
+  main #about_founder .container h2 {
+    font-size: 20px;
+  }
+  main #about_founder .container img {
+    height: 600px;
+    top: -40%;
+  }
+}
+@media only screen and (max-width: 428px) {
+  main #ourteam .container .aboutus h2 {
+    font-size: 25px;
+  }
+  main #ourteam .container .about h4 {
+    font-size: 20px;
+  }
+  main #ourteam .container .about p,
+  main #ourteam .container .about span {
+    font-size: 13.6px;
+  }
+  main #carried .container .extreme {
+    font-size: 22px;
+    max-width: 100%;
+  }
+  main #howit .container h2 {
+    font-size: 30px;
+  }
+  main #howit .container span {
+    max-width: 100%;
+  }
+  main #about_founder {
+    height: min-content;
+  }
+  main #about_founder .container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  main #about_founder .container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  main #about_founder .container div h2 {
+    font-size: 20px;
+  }
+  main #about_founder .container div span {
+    width: 100%;
+    text-align: center;
+  }
+  main #about_founder .container img {
+    position: static;
+    height: 400px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+main #featuredproducts.contact {
+  background-color: #f2f3f3;
+}
+main #featuredproducts.contact .container h2 {
+  font-size: 65px;
+  font-weight: 700;
+  letter-spacing: -4px;
+}
+main #featuredproducts.contact .container .categorys .box {
+  box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.05);
+  height: 232px;
+  padding: 50px;
+  border-radius: 25px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 32%;
+  background-color: white;
+  transition: 400ms;
+}
+main #featuredproducts.contact .container .categorys .box:hover {
+  box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.15);
+}
+main #featuredproducts.contact .container .categorys .box i {
+  font-size: 50px;
+  color: #c19a83;
+  margin-bottom: 15px;
+}
+main #featuredproducts.contact .container .categorys .box span {
+  margin-bottom: 10px;
+  font-size: 1.6667rem;
+  font-weight: 700;
+  line-height: 1.1em;
+}
+main #featuredproducts.contact .container .categorys .box p {
+  color: rgba(0, 0, 0, 0.6117647059);
+  font-size: 15px;
+}
+main #featuredproducts.getintouch {
+  background-color: #f2f3f3;
+}
+main #featuredproducts.getintouch .container form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  align-items: flex-start;
+  justify-content: center;
+}
+main #featuredproducts.getintouch .container form textarea {
+  background-color: #f2f3f3;
+  color: #666;
+  border: 1px solid rgba(102, 102, 102, 0.1333333333);
+  outline: none;
+  padding: 0.6em;
+  width: 100%;
+  font-size: 20px;
+}
+main #featuredproducts.getintouch .container form textarea:focus {
+  background-color: white;
+}
+main #featuredproducts.getintouch .container form div {
+  width: 100%;
+  position: relative;
+}
+main #featuredproducts.getintouch .container form label {
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.6117647059);
+  position: absolute;
+  top: -20px;
+}
+main #featuredproducts.getintouch .container form label sup {
+  color: red;
+  font-size: 14px;
+}
+main #featuredproducts.getintouch .container form input {
+  background-color: #f2f3f3;
+  color: #666;
+  border: 1px solid rgba(102, 102, 102, 0.1333333333);
+  outline: none;
+  padding: 0.6em;
+  width: 100%;
+  font-size: 20px;
+}
+main #featuredproducts.getintouch .container form input:focus {
+  background-color: white;
+}
+main #featuredproducts.getintouch .container form .name {
+  margin-bottom: 30px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+}
+main #featuredproducts.getintouch .container form .name p {
+  color: rgba(0, 0, 0, 0.6117647059);
+  font-size: 12.7px;
+}
+main #featuredproducts.getintouch .container form .name .first {
+  width: 50%;
+  position: relative;
+}
+main #featuredproducts.getintouch .container form .name .first label {
+  position: absolute;
+}
+main #featuredproducts.getintouch .container form .name .last {
+  width: 50%;
+}
+main #featuredproducts.getintouch .container form .email {
+  margin-bottom: 40px;
+}
+main #featuredproducts.getintouch .container form button {
+  padding: 15px 20px;
+  border: none;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 300ms;
+}
+main #featuredproducts.getintouch .container form button:hover {
+  background-color: #c19a83;
+}
+main #map iframe {
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  main #featuredproducts.contact .container h2 {
+    font-size: 40px;
+    letter-spacing: -2px;
+  }
+  main #featuredproducts.contact .container .categorys .box {
+    width: 49%;
+  }
+}
+@media only screen and (max-width: 428px) {
+  main #featuredproducts.contact .container h2 {
+    font-size: 30px;
+    letter-spacing: -1px;
+  }
+  main #featuredproducts.contact .container .categorys .box {
+    width: 100%;
+  }
+  main #featuredproducts.getintouch .container form .name {
+    flex-direction: column;
+  }
+  main #featuredproducts.getintouch .container form .name .first, main #featuredproducts.getintouch .container form .name .last {
+    width: 100%;
+  }
+}
+main #login {
+  padding: 60px 0;
+}
+main #login .container {
+  flex-direction: column;
+}
+main #login .container div {
+  width: 100%;
+}
+main #login .container .account h3 {
+  letter-spacing: -1px;
+  font-size: 1.6em;
+  font-weight: 400;
+}
+main #login .container .login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main #login .container .login form {
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  padding: 30px;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+main #login .container .login form h2 {
+  font-size: 45px;
+  letter-spacing: -2px;
+  font-weight: bold;
+  margin-bottom: 67.5px;
+}
+main #login .container .login form .user,
+main #login .container .login form .password {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  padding: 10px;
+  height: 60px;
+  transition: all 300ms ease-out;
+  transform: translateY(0);
+  margin-bottom: 20px;
+  position: relative;
+}
+main #login .container .login form .user i,
+main #login .container .login form .password i {
+  position: absolute;
+  right: 10px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.7882352941);
+}
+main #login .container .login form .user p,
+main #login .container .login form .password p {
+  transition: opacity 300ms ease-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.4235294118);
+}
+main #login .container .login form .user p sup,
+main #login .container .login form .password p sup {
+  color: red;
+}
+main #login .container .login form .user input,
+main #login .container .login form .password input {
+  width: 100%;
+  border: none;
+  background-color: inherit;
+  outline: none;
+  font-size: 13px;
+}
+main #login .container .login form .user input::placeholder,
+main #login .container .login form .password input::placeholder {
+  font-weight: 300;
+  font-size: 15px;
+}
+main #login .container .login form .remember.change div {
+  background-color: #C19A83;
+}
+main #login .container .login form .remember {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+main #login .container .login form .remember div {
+  height: 13px;
+  width: 13px;
+  border: 1px solid #ae8872;
+  border-radius: 3px;
+}
+main #login .container .login form .remember span {
+  font-size: 13.5px;
+  color: rgba(0, 0, 0, 0.4235294118);
+  font-weight: 600;
+}
+main #login .container .login form .loginbtn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px 0;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+main #login .container .login form .loginbtn:hover {
+  background-color: #C19A83;
+}
+main #login .container .login form a {
+  color: #C19A83;
+  transition: 400ms;
+  font-size: 15px;
+  letter-spacing: -0.3px;
+  font-weight: 400;
+}
+main #login .container .login form a:hover {
+  color: black;
+}
+
+@media only screen and (max-width: 768px) {
+  main #login .container .login {
+    margin-top: 30px;
+  }
+  main #login .container .login form {
+    width: 100%;
+  }
+}
+main #featuredproducts.help {
+  background-color: #f1f2f2;
+}
+main #featuredproducts.help .container .categorys {
+  justify-content: space-evenly;
+}
+main #featuredproducts.help .container .categorys .box {
+  width: 31%;
+  padding: 50px;
+  text-align: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: white;
+  gap: 15px;
+  transition: 300ms;
+  box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.05);
+}
+main #featuredproducts.help .container .categorys .box:hover {
+  box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.186);
+}
+main #featuredproducts.help .container .categorys .box span {
+  font-size: 25px;
+  font-weight: 700;
+}
+main #featuredproducts.help .container .categorys .box i {
+  color: #c19a83;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1px solid #c19a83;
+  font-size: 18px;
+}
+main #featuredproducts.help .container .categorys .box p {
+  color: rgba(0, 0, 0, 0.6117647059);
+  font-size: 15px;
+}
+main #featuredproducts.help .container .categorys .box .access {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+main #featuredproducts.help .container .categorys .box .access a {
+  color: #c19a83;
+  text-transform: uppercase;
+}
+main #featuredproducts.help .container .categorys .box .access i {
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+main #featuredproducts.help .container .categorys .box .access a,
+main #featuredproducts.help .container .categorys .box .access i {
+  transition: 300ms;
+}
+main #featuredproducts.help .container .categorys .box .access:hover a,
+main #featuredproducts.help .container .categorys .box .access:hover i {
+  color: black;
+}
+main #shopcategory.help {
+  padding: 90px 0;
+  background-color: #F1F2F2;
+}
+main #shopcategory.help .container .accordion {
+  margin-top: 40px;
+  width: 60%;
+  border: 1px solid #dfdfdf;
+}
+main #shopcategory.help .container .accordion .accordion-button {
+  background-color: inherit;
+}
+main #shopcategory.help .container .accordion .accordion-button:not(.collapsed)::after {
+  background-image: url("../imgs/minus-solid.svg");
+}
+main #shopcategory.help .container .accordion .accordion-button::after {
+  background-image: url("../imgs/plus-solid.svg");
+}
+main #shopcategory.help .container .accordion .accordion-button:focus {
+  color: #c19a83;
+  border-color: #dfdfdf;
+  box-shadow: none;
+}
+main #shopcategory.help .container .accordion .accordion-button:not(.collapsed) {
+  color: #c19a83;
+  background-color: inherit;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+}
+main #shopcategory.help .container .accordion .accordion-item {
+  background-color: inherit;
+}
+main #shopcategory.help .container .accordion .accordion-item h2 button {
+  font-size: 25px;
+  font-weight: 600;
+}
+main #shopcategory.help .container .accordion .accordion-body {
+  color: rgba(0, 0, 0, 0.6117647059);
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+main #carried.help {
+  height: 55vh;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.349) 100%, rgba(0, 0, 0, 0.0349) 100%), url(" https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/bg-03.jpg");
+}
+main #carried.help .container button {
+  padding: 15px 20px;
+  background-color: #c19a83;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: 400ms;
+  margin-top: 20px;
+  cursor: pointer;
+}
+main #carried.help .container button:hover {
+  background-color: white;
+  color: black;
+}
+
+@media only screen and (max-width: 768px) {
+  main #featuredproducts.help .container .categorys {
+    gap: 20px;
+  }
+  main #featuredproducts.help .container .categorys .box {
+    width: 48%;
+    padding: 40px 10px;
+  }
+  main #shopcategory.help .container .accordion {
+    width: 80%;
+  }
+  main #shopcategory.help .container .accordion .accordion-item h2 button {
+    font-size: 18px;
+  }
+  main #shopcategory.help .container .accordion .accordion-body {
+    color: rgba(0, 0, 0, 0.6117647059);
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+}
+@media only screen and (max-width: 428px) {
+  main #featuredproducts.help .container .categorys .box {
+    width: 100%;
+  }
+  main #shopcategory.help .container .accordion {
+    width: 100%;
+  }
+  main #shopcategory.help .container .accordion .accordion-item h2 button {
+    font-size: 15px;
+  }
+  main #shopcategory.help .container .accordion .accordion-body {
+    color: rgba(0, 0, 0, 0.6117647059);
+    font-size: 10px;
+    letter-spacing: 1px;
   }
 }/*# sourceMappingURL=main.css.map */

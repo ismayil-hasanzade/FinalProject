@@ -1,0 +1,213 @@
+main {
+  #featuredproducts.help {
+    background-color: #f1f2f2;
+    .container {
+      .categorys {
+        justify-content: space-evenly;
+        .box {
+          width: 31%;
+          padding: 50px;
+          text-align: center;
+          align-items: center;
+          border-radius: 20px;
+          background-color: white;
+          gap: 15px;
+          transition: 300ms;
+          box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.05);
+          &:hover {
+            box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.186);
+          }
+          span {
+            font-size: 25px;
+            font-weight: 700;
+          }
+          i {
+            color: #c19a83;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            border: 1px solid #c19a83;
+            font-size: 18px;
+          }
+          p {
+            color: #0000009c;
+            font-size: 15px;
+          }
+          .access {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+
+            a {
+              color: #c19a83;
+              text-transform: uppercase;
+            }
+            i {
+              font-size: 13px;
+              margin: 0;
+              padding: 0;
+              border: none;
+            }
+            a,
+            i {
+              transition: 300ms;
+            }
+            &:hover {
+              a,
+              i {
+                color: black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #shopcategory.help {
+    padding: 90px 0;
+    background-color: #F1F2F2;
+    .container {
+      .accordion {
+        margin-top: 40px;
+        width: 60%;
+        border: 1px solid #dfdfdf;
+        .accordion-button {
+            background-color: inherit;
+            &:not(.collapsed)::after {
+                background-image: url('../imgs/minus-solid.svg');
+                
+            }
+            &::after{
+                background-image: url('../imgs/plus-solid.svg');
+                
+            }
+          &:focus {
+            color: #c19a83;
+            border-color: #dfdfdf;
+            box-shadow:none;
+          }
+          &:not(.collapsed) {
+            color: #c19a83;
+            background-color: inherit;
+            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+
+          }
+        }
+        .accordion-item{
+            background-color: inherit;
+            h2{
+                button{
+                    font-size: 25px;
+                    
+                    font-weight: 600;
+                }
+            }
+        }
+        .accordion-body{
+            color: #0000009c;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+      }
+    }
+  }
+  #carried.help{
+    height: 55vh;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.349) 100%,
+        rgba(0, 0, 0, 0.0349) 100%
+      ),
+      url(" https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/bg-03.jpg");
+   
+    .container{
+        button{
+            padding: 15px 20px;
+            background-color: #c19a83;
+            color: white;
+            border: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: 400ms;
+            margin-top: 20px;
+            cursor: pointer;
+            &:hover{
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  main {
+    #featuredproducts.help {
+      .container {
+        .categorys {
+          gap: 20px;
+          .box {
+            width: 48%;
+            padding: 40px 10px;
+          }
+        }
+      }
+    }
+    #shopcategory.help {
+        
+        .container {
+          .accordion {
+            width: 80%;
+            .accordion-item{
+                h2{
+                    button{
+                        font-size: 18px;
+                        
+                    }
+                }
+            }
+            .accordion-body{
+                color: #0000009c;
+                font-size: 13px;
+                letter-spacing: 1px;
+            }
+          }
+        }
+      }
+  }
+}
+@media only screen and (max-width: 428px) {
+  main {
+    #featuredproducts.help {
+      .container {
+        .categorys {
+          .box {
+            width: 100%;
+          }
+        }
+      }
+    }
+    #shopcategory.help {
+        
+        .container {
+          .accordion {
+            width: 100%;
+            .accordion-item{
+                h2{
+                    button{
+                        font-size: 15px;
+                        
+                    }
+                }
+            }
+            .accordion-body{
+                color: #0000009c;
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
+          }
+        }
+      }
+  }
+}
