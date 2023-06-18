@@ -244,34 +244,160 @@ header {
       rgba(0, 0, 0, 0.0349) 100%
     );
     z-index: 99;
-    display: none;
+    transition: opacity 400ms ease-out;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
     width: 100%;
-    height: 100vh;
     cursor: pointer;
-    position: absolute;
-    top: 0;
 
+    position: fixed;
+    top: 0;
     justify-content: flex-end;
+    .back {
+      width: 100%;
+      height: 100vh;
+    }
     .shoppingmenu {
-      cursor: default;
       display: flex;
+      transition: 400ms ease-out;
+      position: absolute;
+      right: -100%;
+      top: 0;
+      
+      flex-direction: column;
+      cursor: default;
       width: 30%;
-      background-color: white;
+      background-color: #f1f2f2;
+      height: 100vh;
+
       .shoppingmenu_header {
         display: flex;
         align-items: center;
-        height: 30px;
+        height: 8%;
         justify-content: space-between;
         width: 100%;
         padding: 30px 20px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
         font-size: 15px;
         color: #000000d3;
-        font-weight: 600;
+        font-weight: 500;
         letter-spacing: -0.6px;
         i {
           cursor: pointer;
           font-size: 20px;
+        }
+      }
+      .shopping_content {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+        border-top: 1px solid rgba(0, 0, 0, 0.07);
+        padding: 20px 20px 0px 20px;
+        width: 100%;
+        height: 75%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        overflow-y: auto;
+        .productbox {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.56);
+          padding: 20px 0;
+          display: flex;
+          justify-content: space-between;
+
+          .productabout {
+            display: flex;
+            .productimage {
+              height: 60px;
+              width: 60px;
+              margin-right: 5px;
+
+              img {
+                width: 100%;
+              }
+            }
+            .productcontent {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              .productname {
+                display: flex;
+                gap: 3px;
+                font-size: 15px;
+              }
+              .sumbox {
+                display: flex;
+                color: #0000009c;
+                div {
+                  padding: 7px 15px;
+                  border: 1px solid rgba(0, 0, 0, 0.07);
+                  transition: 400ms;
+                  &:hover{
+                    cursor: pointer;
+                    background-color: #c19a83;
+                  }
+                }
+                .productnumber {
+                  background-color: white;
+                  border: none;
+                  &:hover{
+                    cursor: default;
+                    background-color: white;
+                  }
+                }
+              }
+            }
+          }
+          .productclose {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            color: #0000009c;
+            align-items: center;
+            i {
+              cursor: pointer;
+
+              font-size: 20px;
+              font-weight: 100;
+              color: #00000052;
+              transition: 400ms;
+              &:hover {
+                color: #0000009c;
+              }
+            }
+          }
+        }
+      }
+      .totalsum {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+        p {
+          color: #0000009c;
+        }
+        span {
+          font-weight: 600;
+          letter-spacing: -1px;
+        }
+      }
+      .shoppingbuttons {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        height: 20%;
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          background-color: black;
+          padding: 15px 0;
+          text-transform: uppercase;
+          transition: 400ms;
+          &:hover{
+            cursor: pointer;
+            background-color: #c19a83;
+          }
         }
       }
     }

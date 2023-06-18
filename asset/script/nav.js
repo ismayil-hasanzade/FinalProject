@@ -8,6 +8,9 @@ const searchbutton = document.querySelector(".searchbutton");
 const basketbtn = document.querySelector(".basket");
 const shoppingbtn = document.querySelector(".shoppingbtn");
 const shopping_cart = document.querySelector(".shopping_cart");
+const back = document.querySelector(".back");
+const shoppingmenu = document.querySelector(".shoppingmenu");
+
 navbtn.addEventListener("click", () => {
   navbtn.style.cssText = "display:none";
   secretmenu.classList.toggle("change");
@@ -26,33 +29,53 @@ searchIcon.addEventListener("click", () => {
 searchbutton.addEventListener("click", () => {
   serch.style.cssText = "display:flex";
 });
-
 function disableScroll() {
   document.body.style.overflow = "hidden";
 }
-
 function enableScroll() {
   document.body.style.overflow = "auto";
 }
 
-let isScrollEnabled = true;
-
 basketbtn.addEventListener("click", () => {
-  if (isScrollEnabled) {
-    window.scrollTo(0, 0);
-    shopping_cart.style.display = "flex";
-    disableScroll();
-    isScrollEnabled = false;
-  } else {
-    enableScroll();
-    isScrollEnabled = true;
-  }
+  shopping_cart.style.cssText = `
+  transition: transform 400ms ease-out;
+          opacity: 1;
+          height: auto;
+          display:flex;
+          `;
+  shoppingmenu.style.cssText = `
+          right:0;
+          `;
+
+  disableScroll();
 });
 shoppingbtn.addEventListener("click", () => {
-  shopping_cart.style.display = "none";
+  shoppingmenu.style.cssText = `
+  transition: 400ms ease-in;
+          right: -100%;
+          `;
+
+  setTimeout(() => {
+    shopping_cart.style.cssText = `
+    opacity: 0;
+    height: 0;
+    overflow: hidden;`;
+  }, 300);
+
   enableScroll();
 });
-shopping_cart.addEventListener("click", () => {
-  shopping_cart.style.display = "none";
+back.addEventListener("click", () => {
+  shoppingmenu.style.cssText = `
+  transition: 400ms ease-in;
+          right: -100%;
+          `;
+
+  setTimeout(() => {
+    shopping_cart.style.cssText = `
+    opacity: 0;
+    height: 0;
+    overflow: hidden;`;
+  }, 300);
+
   enableScroll();
 });
