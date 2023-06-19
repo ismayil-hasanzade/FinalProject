@@ -111,6 +111,7 @@ header nav .container .menu .categorynav ul li:hover {
   color: #c19a83;
 }
 header nav .container .menu .categorynav ul .magnitfy:hover {
+  cursor: pointer;
   color: black;
   transform: scale(0.7, 1);
 }
@@ -121,9 +122,9 @@ header nav .container .menu .pagenav ul {
   align-items: center;
   position: relative;
 }
-header nav .container .menu .pagenav ul .basket {
+header nav .container .menu .pagenav ul .basketbtn {
   color: #c19a83;
-  font-size: 20px;
+  font-size: 20px !important;
   transition: 400ms;
   cursor: pointer;
 }
@@ -193,14 +194,17 @@ header nav .secretmenu .pagenav ul .basketli div i {
   color: #c19a83;
   font-size: 18px;
 }
+header nav .secretmenu .pagenav ul .basketli div i:hover {
+  cursor: pointer;
+}
 header nav .secretmenu .pagenav ul .basketli div p {
   position: absolute;
   top: -9px;
   right: 5px;
   border-radius: 50%;
   background-color: #c19a83;
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
   display: grid;
   place-items: center;
   font-size: 11px;
@@ -290,7 +294,6 @@ header .shopping_cart .shoppingmenu .shopping_content {
   height: 75%;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   overflow-y: auto;
 }
 header .shopping_cart .shoppingmenu .shopping_content .productbox {
@@ -410,6 +413,14 @@ header .shopping_cart .shoppingmenu .shoppingbuttons div:hover {
   }
   header nav .container .menu .barsicon {
     display: block;
+  }
+  header .shopping_cart .shoppingmenu {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 428px) {
+  header .shopping_cart .shoppingmenu {
+    width: 70%;
   }
 }
 footer {
@@ -595,10 +606,13 @@ main #shopcategory .container .categorys {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 60px;
 }
 main #shopcategory .container .categorys .box {
-  display: grid;
-  place-items: center;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #f0f3f2;
   padding-bottom: 1.2rem;
   width: 23.5%;
@@ -606,8 +620,12 @@ main #shopcategory .container .categorys .box {
   position: relative;
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
 }
-main #shopcategory .container .categorys .box img {
+main #shopcategory .container .categorys .box a {
   width: 100%;
+}
+main #shopcategory .container .categorys .box a img {
+  width: 100%;
+  height: 100%;
 }
 main #shopcategory .container .categorys .box .abouts {
   padding: 3px 0;
@@ -663,11 +681,14 @@ main #featuredproducts .container .categorys {
 }
 main #featuredproducts .container .categorys .box {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   position: relative;
   width: 32%;
   background-color: #f1f3f2;
   margin-bottom: 20px;
+  transition: 400ms;
 }
 main #featuredproducts .container .categorys .box:hover .options {
   opacity: 100%;
@@ -709,6 +730,7 @@ main #featuredproducts .container .categorys .box .options div {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 main #featuredproducts .container .categorys .box .options div:hover {
+  cursor: pointer;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.17);
 }
 main #featuredproducts .container .categorys .box .productabout {
@@ -716,7 +738,7 @@ main #featuredproducts .container .categorys .box .productabout {
   place-items: center;
   gap: 15px;
 }
-main #featuredproducts .container .categorys .box .productabout .productame {
+main #featuredproducts .container .categorys .box .productabout .productname {
   font-size: 22px;
 }
 main #featuredproducts .container .categorys .box .productabout .price {
@@ -736,6 +758,9 @@ main #featuredproducts .container .categorys .box .productabout .colors div {
   width: 20px;
   border-radius: 50%;
   border: 3px solid white;
+}
+main #featuredproducts .container .categorys .box .productabout .colors div:hover {
+  cursor: pointer;
 }
 main #featuredproducts .container .categorys .box .productabout .colors .black {
   background-color: black;
@@ -1724,5 +1749,405 @@ main #carried.help .container button:hover {
     color: rgba(0, 0, 0, 0.6117647059);
     font-size: 10px;
     letter-spacing: 1px;
+  }
+}
+main #product .container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  justify-content: space-between;
+}
+main #product .container .productimages {
+  display: flex;
+  width: 47%;
+  flex-direction: column;
+  gap: 15px;
+}
+main #product .container .productimages .basisimage {
+  width: 100%;
+  overflow: hidden;
+  height: 70%;
+}
+main #product .container .productimages .basisimage img {
+  width: 100%;
+  height: 100%;
+  transition: 400ms;
+}
+main #product .container .productimages .basisimage img:hover {
+  transform: scale(1.2);
+}
+main #product .container .productimages .moreimages {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+}
+main #product .container .productimages .moreimages div {
+  overflow: hidden;
+  width: 100%;
+}
+main #product .container .productimages .moreimages div img {
+  width: 100%;
+  transition: 400ms;
+  height: 100%;
+}
+main #product .container .productimages .moreimages div img:hover {
+  transform: scale(1.2);
+}
+main #product .container .productcontent {
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+main #product .container .productcontent .categories {
+  display: flex;
+  color: #777777;
+  font-size: 13.8px;
+  gap: 5px;
+}
+main #product .container .productcontent h3 {
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+main #product .container .productcontent .price {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+main #product .container .productcontent .price h4 {
+  color: #c19a83;
+  font-size: 22.5px;
+  font-weight: 700;
+  margin: 0;
+}
+main #product .container .productcontent .price p {
+  margin: 0;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6117647059);
+}
+main #product .container .productcontent .shippingtext {
+  color: rgba(0, 0, 0, 0.6117647059);
+  font-size: 15px;
+  letter-spacing: 0.3px;
+}
+main #product .container .colors {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+main #product .container .colors div {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+main #product .container .colors .black {
+  background-color: black;
+}
+main #product .container .colors .bronze {
+  background-color: #8f6453;
+}
+main #product .container .colors .gold {
+  background-color: #dabca2;
+}
+main #product .container .addtocart {
+  display: flex;
+  padding: 20px 0;
+  gap: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  width: 100%;
+}
+main #product .container .addtocart .box {
+  display: flex;
+}
+main #product .container .addtocart .box div {
+  padding: 10px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  transition: 400ms;
+  cursor: pointer;
+}
+main #product .container .addtocart .box div:hover {
+  color: white;
+  background-color: #c19a83;
+}
+main #product .container .addtocart .box .sum {
+  cursor: default;
+}
+main #product .container .addtocart .box .sum:hover {
+  background-color: inherit;
+  color: black;
+}
+main #product .container .addtocart .addbutton {
+  padding: 10px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  background-color: rgba(0, 0, 0, 0.4235294118);
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: -1px;
+  cursor: pointer;
+  transition: 400ms;
+  font-size: 15px;
+}
+main #product .container .addtocart .addbutton:hover {
+  color: white;
+  background-color: #c19a83;
+}
+main #product .container .sku {
+  display: flex;
+  color: rgba(0, 0, 0, 0.6117647059);
+  font-size: 13.5px;
+}
+main #product .container .sku :first-child {
+  margin-right: 20px;
+}
+main #product .container .sku a {
+  color: #c19a83;
+  transition: 400ms;
+}
+main #product .container .sku a:hover {
+  color: black;
+}
+main #product .container .guaranted {
+  display: flex;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
+  gap: 20px;
+}
+main #product .container .guaranted p {
+  color: rgba(0, 0, 0, 0.6117647059);
+  font-weight: 600;
+  padding: 0 10px;
+  top: -10px;
+  position: absolute;
+  background-color: white;
+}
+main #product .container .guaranted div {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 5px;
+  width: 50px;
+  height: 30px;
+}
+main #product .container .guaranted div img {
+  width: 100%;
+}
+main #product .container .shippingorders {
+  display: flex;
+  flex-direction: column;
+  color: rgba(0, 0, 0, 0.6117647059);
+  gap: 10px;
+}
+main #product .container .shippingorders p {
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-weight: 600;
+}
+main #product .container .shippingorders .box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+main #product .container .shippingorders .box div {
+  display: grid;
+  place-items: center;
+  height: 15px;
+  width: 15px;
+}
+main #product .container .shippingorders .box div svg {
+  width: 100%;
+  fill: #777777;
+}
+main #accordion {
+  padding-bottom: 30px;
+}
+main #accordion .container .accordion {
+  margin-top: 40px;
+  width: 100%;
+  border: 1px solid #dfdfdf;
+}
+main #accordion .container .accordion .accordion-button {
+  background-color: inherit;
+}
+main #accordion .container .accordion .accordion-button:not(.collapsed)::after {
+  background-image: url("../imgs/minus-solid.svg");
+}
+main #accordion .container .accordion .accordion-button::after {
+  background-image: url("../imgs/plus-solid.svg");
+}
+main #accordion .container .accordion .accordion-button:focus {
+  color: #c19a83;
+  border-color: #dfdfdf;
+  box-shadow: none;
+}
+main #accordion .container .accordion .accordion-button:not(.collapsed) {
+  color: #c19a83;
+  background-color: inherit;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+}
+main #accordion .container .accordion .accordion-item {
+  background-color: inherit;
+}
+main #accordion .container .accordion .accordion-item h2 button {
+  font-size: 16px;
+  font-weight: 700;
+}
+main #accordion .container .accordion .accordion-body {
+  color: rgba(0, 0, 0, 0.6117647059);
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: flex;
+  width: 100%;
+}
+main #accordion .container .accordion .accordion-body .color {
+  width: 80%;
+  color: rgba(0, 0, 0, 0.6117647059);
+}
+main #accordion .container .accordion .accordion-body .category {
+  width: 20%;
+}
+main #accordion .container .accordion .accordion-body .category,
+main #accordion .container .accordion .accordion-body .color {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1333333333);
+}
+main #accordion .container .accordion .accordion-body .comments {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+main #accordion .container .accordion .accordion-body .comments .box {
+  display: flex;
+  gap: 20px;
+}
+main #accordion .container .accordion .accordion-body .comments .box .image {
+  display: grid;
+  width: 50px;
+  height: 50px;
+  place-items: center;
+  background-color: #c5c5c5;
+  color: white;
+  border-radius: 50%;
+  font-size: 35px;
+}
+main #accordion .container .accordion .accordion-body .comments .box .content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+main #accordion .container .accordion .accordion-body .comments .box .content span {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 500;
+}
+main #accordion .container .accordion .accordion-body .comments form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1137254902);
+  padding: 30px;
+}
+main #accordion .container .accordion .accordion-body .comments form p {
+  letter-spacing: -0.5px;
+}
+main #accordion .container .accordion .accordion-body .comments form h4 {
+  font-size: 20px;
+  font-weight: 500;
+}
+main #accordion .container .accordion .accordion-body .comments form h5 {
+  font-size: 15px;
+  font-weight: 500;
+}
+main #accordion .container .accordion .accordion-body .comments form sup {
+  font-size: 23px;
+  font-weight: 100;
+  top: 0;
+}
+main #accordion .container .accordion .accordion-body .comments form .raiting {
+  display: flex;
+  align-items: center;
+}
+main #accordion .container .accordion .accordion-body .comments form .raiting p {
+  font-size: 18px;
+  margin: 0 10px 0 0;
+}
+main #accordion .container .accordion .accordion-body .comments form .review {
+  display: flex;
+  flex-direction: column;
+}
+main #accordion .container .accordion .accordion-body .comments form .review p {
+  font-size: 18px;
+  margin: 0;
+}
+main #accordion .container .accordion .accordion-body .comments form .review textarea {
+  width: 100%;
+  border-color: rgba(0, 0, 0, 0.1294117647);
+  outline: none;
+}
+main #accordion .container .accordion .accordion-body .comments form .inputdiv {
+  display: flex;
+  justify-content: space-between;
+}
+main #accordion .container .accordion .accordion-body .comments form .inputdiv div {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+}
+main #accordion .container .accordion .accordion-body .comments form .inputdiv div input {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1294117647);
+  outline: none;
+}
+main #accordion .container .accordion .accordion-body .comments form .inputdiv div input:focus {
+  border: none;
+}
+main #accordion .container .accordion .accordion-body .comments form .submitbtn {
+  width: 120px;
+  display: grid;
+  place-items: center;
+  text-transform: uppercase;
+  padding: 10px 0;
+  color: white;
+  background-color: black;
+  transition: 400ms;
+  cursor: pointer;
+}
+main #accordion .container .accordion .accordion-body .comments form .submitbtn:hover {
+  background-color: #c19a83;
+}
+main #featuredproducts.product .container .categorys .box {
+  padding-bottom: 30px;
+  width: 23.5%;
+}
+
+@media only screen and (max-width: 768px) {
+  main #product .container {
+    flex-direction: column;
+  }
+  main #product .container .productimages {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  main #product .container .productcontent {
+    width: 100%;
+  }
+  main #featuredproducts.product .container .categorys .box {
+    padding-bottom: 30px;
+    width: 48.5%;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 428px) {
+  main #featuredproducts.product .container .categorys .box {
+    width: 100%;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -1,81 +1,21 @@
-const cards = document.querySelector(".cards");
 const categorys = document.querySelector(".categorys");
-const featurecategories = document.querySelector(".featurecategories");
+const showingp = document.querySelector(".showingp");
+let count = 0;
 
-// Slick CODE
-$(".cards").slick({
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 5,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true,
-      },
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-      },
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-});
-
-fetch("http://localhost:3000/Product")
+fetch(`http://localhost:3000/Product`)
   .then((res) => res.json())
   .then((data) => {
-    let basket_arr = [];
-
-    for (let i = 0; i < 4; i++) {
-      const box = document.createElement("div");
-      const a = document.createElement("a");
-      const img = document.createElement("img");
-      const abouts = document.createElement("div");
-      const span = document.createElement("span");
-      const p = document.createElement("p");
-
-      box.className = "box";
-      abouts.className = "abouts";
-      img.src = data[i].min_imgs;
-      span.innerText = data[i].categorys.category_a;
-      p.innerText = data[i].stock + " Products";
-      a.href = "product.html";
-      a.target = "_blank";
-
-      abouts.append(span, p);
-      a.append(img);
-      box.append(a, abouts);
-      categorys.appendChild(box);
-    }
-
-    for (let i = 0; i < 4; i++) {
-      const id = data[i].id;
-      const min_price = data[i].price.min_price;
-      const max_price = data[i].price.max_price;
-      const bronze_max = data[i].price.bronze_max;
-      const gold_max = data[i].price.gold_max;
-      const black_max = data[i].price.black_max;
-      const bronze_img = data[i].colors_imgs.bronze;
-      const black_img = data[i].colors_imgs.black;
-      const gold_img = data[i].colors_imgs.gold;
-
+    data.forEach((element) => {
+      count++;
+      const id = element.id;
+      const min_price = element.price.min_price;
+      const max_price = element.price.max_price;
+      const bronze_max = data[0].price.bronze_max;
+      const gold_max = data[0].price.gold_max;
+      const black_max = data[0].price.black_max;
+      const bronze_img = element.colors_imgs.bronze;
+      const black_img = element.colors_imgs.black;
+      const gold_img = element.colors_imgs.gold;
       const box = document.createElement("div");
       const sale = document.createElement("div");
       const options = document.createElement("div");
@@ -97,7 +37,6 @@ fetch("http://localhost:3000/Product")
       const black = document.createElement("div");
       const bronze = document.createElement("div");
       const gold = document.createElement("div");
-
       box.className = "box";
       sale.className = "sale";
       options.className = "options";
@@ -117,13 +56,13 @@ fetch("http://localhost:3000/Product")
       black.className = "black";
       gold.className = "gold";
       sale.innerText = "Sale";
-
-      imga.href = "product.html#" + data[i].id;
-      img.src = data[i].imgs;
-      productname.innerText = data[i].name;
-      minprice.innerText = data[i].price.min_price;
+      basketa.href = "product.html#" + element.id;
+      imga.href = "product.html#" + element.id;
+      img.src = element.imgs;
+      productname.innerText = element.name;
+      minprice.innerText = element.price.min_price;
       span.innerText = "-";
-      maxprice.innerText = data[i].price.max_price;
+      maxprice.innerText = element.price.max_price;
       colors.append(black, bronze, gold);
       price.append(minprice, span, maxprice);
       productabout.append(productname, price, colors);
@@ -133,26 +72,23 @@ fetch("http://localhost:3000/Product")
       view.append(deleti);
       options.append(basket, view);
       box.append(sale, options, imga, productabout);
-      featurecategories.appendChild(box);
-
-      // ELEMENT REMOVE //
+      categorys.appendChild(box);
+      //ELEMENT REMOVE//
       deleti.addEventListener("click", () => {
         box.remove();
         fetch(`http://localhost:3000/Product/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
-          .then((data) => {
-            console.log("Deleted");
-          });
+          .then(data);
+        console.log("Deleted");
       });
 
-      // Reng değiştirme //
       black.addEventListener("click", () => {
         img.src = black_img;
         if (
-          minprice.innerText === min_price &&
-          maxprice.innerText === max_price
+          minprice.innerText == min_price &&
+          maxprice.innerText == max_price
         ) {
           span.style.display = "none";
           minprice.style.opacity = "50%";
@@ -165,12 +101,11 @@ fetch("http://localhost:3000/Product")
           maxprice.innerText = max_price;
         }
       });
-
       bronze.addEventListener("click", () => {
         img.src = bronze_img;
         if (
-          minprice.innerText === min_price &&
-          maxprice.innerText === max_price
+          minprice.innerText == min_price &&
+          maxprice.innerText == max_price
         ) {
           span.style.display = "none";
           minprice.style.opacity = "50%";
@@ -183,12 +118,12 @@ fetch("http://localhost:3000/Product")
           maxprice.innerText = max_price;
         }
       });
-
       gold.addEventListener("click", () => {
         img.src = gold_img;
+
         if (
-          minprice.innerText === min_price &&
-          maxprice.innerText === max_price
+          minprice.innerText == min_price &&
+          maxprice.innerText == max_price
         ) {
           span.style.display = "none";
           minprice.style.opacity = "50%";
@@ -201,15 +136,6 @@ fetch("http://localhost:3000/Product")
           maxprice.innerText = max_price;
         }
       });
-      if (localStorage.getItem("basket") !== null) {
-        basket_arr = JSON.parse(localStorage.getItem("basket"));
-      }
-      // Sepete ekleme //
-      basket.addEventListener("click", () => {
-        if (basket_arr.find((x) => x.id === data[i].id) === undefined) {
-          basket_arr.push({ ...data[i], count: 1 });
-        }
-        localStorage.setItem("basket", JSON.stringify(basket_arr));
-      });
-    }
+    });
+    showingp.innerText = "Showing " + count + " Results";
   });
