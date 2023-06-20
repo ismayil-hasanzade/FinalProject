@@ -40,11 +40,27 @@ header {
   background-repeat: no-repeat;
 }
 header nav {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 60px;
   align-items: center;
   transition: 400ms;
+}
+header nav .usersimage {
+  display: flex;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 9999;
+  right: 15px;
+  bottom: -15px;
+}
+header nav .usersimage i {
+  font-size: 25px;
 }
 header nav .search {
   background-color: black;
@@ -1461,139 +1477,6 @@ main #map iframe {
     width: 100%;
   }
 }
-main #login {
-  padding: 60px 0;
-}
-main #login .container {
-  flex-direction: column;
-}
-main #login .container div {
-  width: 100%;
-}
-main #login .container .account h3 {
-  letter-spacing: -1px;
-  font-size: 1.6em;
-  font-weight: 400;
-}
-main #login .container .login {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-main #login .container .login form {
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  padding: 30px;
-  width: 40%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-main #login .container .login form h2 {
-  font-size: 45px;
-  letter-spacing: -2px;
-  font-weight: bold;
-  margin-bottom: 67.5px;
-}
-main #login .container .login form .user,
-main #login .container .login form .password {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  padding: 10px;
-  height: 60px;
-  transition: all 300ms ease-out;
-  transform: translateY(0);
-  margin-bottom: 20px;
-  position: relative;
-}
-main #login .container .login form .user i,
-main #login .container .login form .password i {
-  position: absolute;
-  right: 10px;
-  font-size: 13px;
-  color: rgba(0, 0, 0, 0.7882352941);
-}
-main #login .container .login form .user p,
-main #login .container .login form .password p {
-  transition: opacity 300ms ease-out;
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.4235294118);
-}
-main #login .container .login form .user p sup,
-main #login .container .login form .password p sup {
-  color: red;
-}
-main #login .container .login form .user input,
-main #login .container .login form .password input {
-  width: 100%;
-  border: none;
-  background-color: inherit;
-  outline: none;
-  font-size: 13px;
-}
-main #login .container .login form .user input::placeholder,
-main #login .container .login form .password input::placeholder {
-  font-weight: 300;
-  font-size: 15px;
-}
-main #login .container .login form .remember.change div {
-  background-color: #C19A83;
-}
-main #login .container .login form .remember {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-}
-main #login .container .login form .remember div {
-  height: 13px;
-  width: 13px;
-  border: 1px solid #ae8872;
-  border-radius: 3px;
-}
-main #login .container .login form .remember span {
-  font-size: 13.5px;
-  color: rgba(0, 0, 0, 0.4235294118);
-  font-weight: 600;
-}
-main #login .container .login form .loginbtn {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 100%;
-  padding: 10px 0;
-  background-color: black;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-main #login .container .login form .loginbtn:hover {
-  background-color: #C19A83;
-}
-main #login .container .login form a {
-  color: #C19A83;
-  transition: 400ms;
-  font-size: 15px;
-  letter-spacing: -0.3px;
-  font-weight: 400;
-}
-main #login .container .login form a:hover {
-  color: black;
-}
-
-@media only screen and (max-width: 768px) {
-  main #login .container .login {
-    margin-top: 30px;
-  }
-  main #login .container .login form {
-    width: 100%;
-  }
-}
 main #featuredproducts.help {
   background-color: #f1f2f2;
 }
@@ -2151,6 +2034,139 @@ main #featuredproducts.product .container .categorys .box {
 }
 @media only screen and (max-width: 428px) {
   main #featuredproducts.product .container .categorys .box {
+    width: 100%;
+  }
+}
+main #login {
+  padding: 60px 0;
+}
+main #login .container {
+  flex-direction: column;
+}
+main #login .container div {
+  width: 100%;
+}
+main #login .container .account h3 {
+  letter-spacing: -1px;
+  font-size: 1.6em;
+  font-weight: 400;
+}
+main #login .container .login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main #login .container .login form {
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  padding: 30px;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+main #login .container .login form h2 {
+  font-size: 45px;
+  letter-spacing: -2px;
+  font-weight: bold;
+  margin-bottom: 67.5px;
+}
+main #login .container .login form .user,
+main #login .container .login form .password {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  padding: 10px;
+  height: 60px;
+  transition: all 300ms ease-out;
+  transform: translateY(0);
+  margin-bottom: 20px;
+  position: relative;
+}
+main #login .container .login form .user i,
+main #login .container .login form .password i {
+  position: absolute;
+  right: 10px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.7882352941);
+}
+main #login .container .login form .user p,
+main #login .container .login form .password p {
+  transition: opacity 300ms ease-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.4235294118);
+}
+main #login .container .login form .user p sup,
+main #login .container .login form .password p sup {
+  color: red;
+}
+main #login .container .login form .user input,
+main #login .container .login form .password input {
+  width: 100%;
+  border: none;
+  background-color: inherit;
+  outline: none;
+  font-size: 13px;
+}
+main #login .container .login form .user input::placeholder,
+main #login .container .login form .password input::placeholder {
+  font-weight: 300;
+  font-size: 15px;
+}
+main #login .container .login form .remember.change div {
+  background-color: #c19a83;
+}
+main #login .container .login form .remember {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+main #login .container .login form .remember div {
+  height: 13px;
+  width: 13px;
+  border: 1px solid #ae8872;
+  border-radius: 3px;
+}
+main #login .container .login form .remember span {
+  font-size: 13.5px;
+  color: rgba(0, 0, 0, 0.4235294118);
+  font-weight: 600;
+}
+main #login .container .login form .loginbtn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px 0;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+main #login .container .login form .loginbtn:hover {
+  background-color: #c19a83;
+}
+main #login .container .login form a {
+  color: #c19a83;
+  transition: 400ms;
+  font-size: 15px;
+  letter-spacing: -0.3px;
+  font-weight: 400;
+}
+main #login .container .login form a:hover {
+  color: black;
+}
+
+@media only screen and (max-width: 768px) {
+  main #login .container .login {
+    margin-top: 30px;
+  }
+  main #login .container .login form {
     width: 100%;
   }
 }/*# sourceMappingURL=main.css.map */

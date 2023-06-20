@@ -5,20 +5,23 @@ let count = 0;
 fetch(`http://localhost:3000/Product`)
   .then((res) => res.json())
   .then((data) => {
+    let say = 0;
     data.forEach((element) => {
       const category_a = element.categorys.category_a;
       const category_b = element.categorys.category_b;
       if (category_a == "Decor" || category_b == "Decor") {
-        count++;
+        say++;
+        let basket_arr = [];
         const id = element.id;
         const min_price = element.price.min_price;
         const max_price = element.price.max_price;
-        const bronze_max = data[0].price.bronze_max;
-        const gold_max = data[0].price.gold_max;
-        const black_max = data[0].price.black_max;
+        const bronze_max = element.price.bronze_max;
+        const gold_max = element.price.gold_max;
+        const black_max = element.price.black_max;
         const bronze_img = element.colors_imgs.bronze;
         const black_img = element.colors_imgs.black;
         const gold_img = element.colors_imgs.gold;
+
         const box = document.createElement("div");
         const sale = document.createElement("div");
         const options = document.createElement("div");
@@ -59,7 +62,6 @@ fetch(`http://localhost:3000/Product`)
         black.className = "black";
         gold.className = "gold";
         sale.innerText = "Sale";
-        basketa.href = "product.html#" + element.id;
         imga.href = "product.html#" + element.id;
         img.src = element.imgs;
         productname.innerText = element.name;
@@ -76,23 +78,31 @@ fetch(`http://localhost:3000/Product`)
         options.append(basket, view);
         box.append(sale, options, imga, productabout);
         categorys.appendChild(box);
-        //ELEMENT REMOVE//
+        let color_name = element.color;
+        let color = element.color;
+        // ELEMENT REMOVE //
         deleti.addEventListener("click", () => {
           box.remove();
           fetch(`http://localhost:3000/Product/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
-            .then(data);
-          console.log("Deleted");
+            .then((data) => {
+              console.log("Deleted");
+            });
         });
+
+        // Reng değiştirme //
 
         black.addEventListener("click", () => {
           img.src = black_img;
+
           if (
-            minprice.innerText == min_price &&
-            maxprice.innerText == max_price
+            minprice.innerText === min_price &&
+            maxprice.innerText === max_price
           ) {
+            color_name = "black";
+            localStorage.setItem("color", JSON.stringify(color_name));
             span.style.display = "none";
             minprice.style.opacity = "50%";
             minprice.innerHTML = `<del>${black_max}</del>`;
@@ -102,15 +112,24 @@ fetch(`http://localhost:3000/Product`)
             minprice.style.opacity = "100%";
             minprice.innerText = min_price;
             maxprice.innerText = max_price;
+            img.src = element.imgs;
+            color_name = element.color;
+            color = element.color;
+            localStorage.setItem("color", JSON.stringify(color));
           }
         });
+
         bronze.addEventListener("click", () => {
           img.src = bronze_img;
+
           if (
-            minprice.innerText == min_price &&
-            maxprice.innerText == max_price
+            minprice.innerText === min_price &&
+            maxprice.innerText === max_price
           ) {
+            color_name = "bronze";
             span.style.display = "none";
+            localStorage.setItem("color", JSON.stringify(color_name));
+
             minprice.style.opacity = "50%";
             minprice.innerHTML = `<del>${bronze_max}</del>`;
             maxprice.innerHTML = min_price;
@@ -119,15 +138,21 @@ fetch(`http://localhost:3000/Product`)
             minprice.style.opacity = "100%";
             minprice.innerText = min_price;
             maxprice.innerText = max_price;
+            img.src = element.imgs;
+            color_name = element.color;
+            color = element.color;
+            localStorage.setItem("color", JSON.stringify(color));
           }
         });
+
         gold.addEventListener("click", () => {
           img.src = gold_img;
-
           if (
-            minprice.innerText == min_price &&
-            maxprice.innerText == max_price
+            minprice.innerText === min_price &&
+            maxprice.innerText === max_price
           ) {
+            color_name = "gold";
+            localStorage.setItem("color", JSON.stringify(color_name));
             span.style.display = "none";
             minprice.style.opacity = "50%";
             minprice.innerHTML = `<del>${gold_max}</del>`;
@@ -137,9 +162,43 @@ fetch(`http://localhost:3000/Product`)
             minprice.style.opacity = "100%";
             minprice.innerText = min_price;
             maxprice.innerText = max_price;
+            img.src = element.imgs;
+            color_name = element.color;
+            color = element.color;
+            localStorage.setItem("color", JSON.stringify(color));
           }
+        });
+        imga.addEventListener("click", () => {
+          localStorage.setItem("color", JSON.stringify(color_name));
+        });
+
+        // Basket //
+        if (localStorage.getItem("basket") !== null) {
+          basket_arr = JSON.parse(localStorage.getItem("basket"));
+        }
+        basket.addEventListener("click", () => {
+          if (basket_arr.find((x) => x.id === element.id) === undefined) {
+            basket_arr.push({
+              ...element,
+              count: 1,
+              main_color: img.src,
+              color: color_name,
+            });
+          } else {
+            if (
+              basket_arr.find((x) => x.main_color === img.src) === undefined
+            ) {
+              basket_arr.push({
+                ...element,
+                count: 1,
+                main_color: img.src,
+                color: color_name,
+              });
+            }
+          }
+          localStorage.setItem("basket", JSON.stringify(basket_arr));
         });
       }
     });
-    showingp.innerText = "Showing " + count + " Results";
+    showingp.innerText = "Showing " + say + " Results";
   });

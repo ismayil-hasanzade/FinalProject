@@ -16,6 +16,22 @@ header {
   background-repeat: no-repeat;
 
   nav {
+    position: relative;
+    .usersimage {
+      display: flex;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      z-index: 9999;
+      right: 15px;
+      bottom: -15px;
+      i{
+        font-size: 25px;
+      }
+    }
     .search {
       background-color: black;
       position: absolute;
@@ -31,7 +47,6 @@ header {
       .searchIcon {
         color: white;
         z-index: 9999;
-       
       }
       input {
         border: none;
@@ -106,7 +121,7 @@ header {
             position: relative;
             .basketbtn {
               color: #c19a83;
-              font-size: 20px!important;
+              font-size: 20px !important;
               transition: 400ms;
               cursor: pointer;
             }
@@ -300,7 +315,7 @@ header {
         height: 75%;
         display: flex;
         flex-direction: column;
-        
+
         overflow-y: auto;
         .productbox {
           border-bottom: 1px solid rgba(0, 0, 0, 0.56);
@@ -443,8 +458,6 @@ header {
 
 @media only screen and (max-width: 428px) {
   header {
-  
-  
     .shopping_cart {
       .shoppingmenu {
         width: 70%;

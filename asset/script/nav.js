@@ -26,6 +26,7 @@ xbtn.addEventListener("click", () => {
   secretmenu.classList.toggle("change");
   navbtn.style.cssText = "display:block";
   xbtn.style.cssText = "display:none";
+  window.location.reload();
 });
 searchIcon.addEventListener("click", () => {
   serch.style.cssText = "display:none";
@@ -87,6 +88,7 @@ back.addEventListener("click", () => {
   }, 300);
 
   enableScroll();
+  window.location.reload();
 });
 //basket append//
 
@@ -204,4 +206,12 @@ function removeProductFromLocalStorage(productId) {
   let basketArr = JSON.parse(localStorage.getItem("basket"));
   basketArr = basketArr.filter((item) => item.id !== productId);
   localStorage.setItem("basket", JSON.stringify(basketArr));
+}
+const usersimage = document.querySelector(".usersimage");
+
+if (localStorage.getItem("users") !== null) {
+  usersimage.style.display = "block";
+  console.log("test");
+} else {
+  usersimage.style.display = "none";
 }
