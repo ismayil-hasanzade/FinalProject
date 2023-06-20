@@ -50,9 +50,9 @@
         "category_b": "Office"
       },
       "stock": 15,
-      "review": ",janfkjn",
-      "commentname": "amnsd asf",
-      "email": "asffsaa"
+      "review": "Yeni ve debdebeli",
+      "commentname": "Vasif",
+      "email": "ismayil.hesenzade.98@mail.ru"
     },
     {
       "id": 3,
@@ -101,6 +101,174 @@
         "category_b": "Office"
       },
       "stock": 15
+    },
+    {
+      "name": "Product Name 5",
+      "color": "black",
+      "price": {
+        "min_price": "75",
+        "max_price": "100",
+        "black_max": "200",
+        "gold_max": "500",
+        "bronze_max": "300"
+      },
+      "imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-07-a.jpg",
+      "min_imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-07-a.jpg",
+      "colors_imgs": {
+        "black": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-07-a.jpg",
+        "bronze": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-07-b.jpg",
+        "gold": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-07-c.jpg"
+      },
+      "categorys": {
+        "category_a": "Decor",
+        "category_b": "Office"
+      },
+      "stock": "20",
+      "id": 5
+    },
+    {
+      "name": "Product Name 6",
+      "color": "black",
+      "price": {
+        "min_price": "102",
+        "max_price": "210",
+        "black_max": "300",
+        "gold_max": "400",
+        "bronze_max": "200"
+      },
+      "imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-03-a.jpg",
+      "min_imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-03-a.jpg",
+      "colors_imgs": {
+        "black": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-03-a.jpg",
+        "bronze": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-03-b.jpg",
+        "gold": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-03-c.jpg"
+      },
+      "categorys": {
+        "category_a": "Decor",
+        "category_b": "Bedroom"
+      },
+      "stock": "34",
+      "id": 6
+    },
+    {
+      "name": "Product Name 7",
+      "color": "bronze",
+      "price": {
+        "min_price": "120",
+        "max_price": "140",
+        "black_max": "320",
+        "gold_max": "350",
+        "bronze_max": "340"
+      },
+      "imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-05-b.jpg",
+      "min_imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-05-b.jpg",
+      "colors_imgs": {
+        "black": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-05-a.jpg",
+        "bronze": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-05-b.jpg",
+        "gold": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-05-c.jpg"
+      },
+      "categorys": {
+        "category_a": "Decor",
+        "category_b": "Office"
+      },
+      "stock": "12",
+      "id": 7
+    },
+    {
+      "name": "Product Name 8",
+      "color": "black",
+      "price": {
+        "min_price": "122",
+        "max_price": "203",
+        "black_max": "234",
+        "gold_max": "321",
+        "bronze_max": "200"
+      },
+      "imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-08-a.jpg",
+      "min_imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-08-a.jpg",
+      "colors_imgs": {
+        "black": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-08-a.jpg",
+        "bronze": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-08-b.jpg",
+        "gold": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-08-c.jpg"
+      },
+      "categorys": {
+        "category_a": "Bedroom",
+        "category_b": "Decor"
+      },
+      "stock": "100",
+      "id": 8
+    },
+    {
+      "name": "Product Name 9",
+      "color": "black",
+      "price": {
+        "min_price": "92",
+        "max_price": "200",
+        "black_max": "200",
+        "gold_max": "321",
+        "bronze_max": "120"
+      },
+      "imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-16-a.jpg",
+      "min_imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-16-a.jpg",
+      "colors_imgs": {
+        "black": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-16-a.jpg",
+        "bronze": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-16-b.jpg",
+        "gold": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-16-b.jpg"
+      },
+      "categorys": {
+        "category_a": "Office",
+        "category_b": "Bedroom"
+      },
+      "stock": "123",
+      "id": 9
+    },
+    {
+      "name": "Product Name 10",
+      "color": "bronze",
+      "price": {
+        "min_price": "220",
+        "max_price": "260",
+        "black_max": "230",
+        "gold_max": "235",
+        "bronze_max": "210"
+      },
+      "imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-11-b.jpg",
+      "min_imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-11-b.jpg",
+      "colors_imgs": {
+        "black": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-11-a.jpg",
+        "bronze": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-11-b.jpg",
+        "gold": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-11-c.jpg"
+      },
+      "categorys": {
+        "category_a": "Living Room",
+        "category_b": "Office"
+      },
+      "stock": "132",
+      "id": 10
+    },
+    {
+      "name": "Product Name 11",
+      "color": "black",
+      "price": {
+        "min_price": "120",
+        "max_price": "350",
+        "black_max": "234",
+        "gold_max": "421",
+        "bronze_max": "124"
+      },
+      "imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-12-a.jpg",
+      "min_imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-12-a.jpg",
+      "colors_imgs": {
+        "black": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-12-a.jpg",
+        "bronze": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-12-b.jpg",
+        "gold": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-12-c.jpg"
+      },
+      "categorys": {
+        "category_a": "Office",
+        "category_b": "Living Room"
+      },
+      "stock": "24",
+      "id": 11
     }
   ],
   "Users": [

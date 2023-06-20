@@ -67,27 +67,36 @@ fetch(`http://localhost:3000/Product/${id}`)
       basket_arr = JSON.parse(localStorage.getItem("basket"));
     }
     //Baskete Elave etme//
+
     addbutton.addEventListener("click", () => {
-      if (basket_arr.find((x) => x.id === data.id) === undefined) {
-        basket_arr.push({
-          ...data,
-          count: productsum.innerText,
-          main_color: basisimage.src,
-          color: color_name,
-        });
-      } else {
-        if (
-          basket_arr.find((x) => x.main_color === basisimage.src) === undefined
-        ) {
+      if (localStorage.getItem("users") !== null) {
+        if (basket_arr.find((x) => x.id === data.id) === undefined) {
           basket_arr.push({
             ...data,
             count: productsum.innerText,
             main_color: basisimage.src,
             color: color_name,
           });
+          window.location.reload();
+        } else {
+          if (
+            basket_arr.find((x) => x.main_color === basisimage.src) ===
+            undefined
+          ) {
+            basket_arr.push({
+              ...data,
+              count: productsum.innerText,
+              main_color: basisimage.src,
+              color: color_name,
+            });
+            window.location.reload();
+          }
         }
+        localStorage.setItem("basket", JSON.stringify(basket_arr));
+      } else {
+        alert("Login Edin");
+        window.open("login.html");
       }
-      localStorage.setItem("basket", JSON.stringify(basket_arr));
     });
     const commentsbox = document.querySelector(".commentsbox");
     const box = document.createElement("div");
@@ -95,11 +104,17 @@ fetch(`http://localhost:3000/Product/${id}`)
     const image = document.createElement("div");
     image.className = "image";
     const i = document.createElement("i");
-    i.className = "fa-solid fa-user";
     const content = document.createElement("content");
     content.className = "content";
     const span = document.createElement("span");
     const p = document.createElement("p");
+    if (data.commentname) {
+      span.innerText = data.commentname;
+      i.className = "fa-solid fa-user";
+    }
+    if (data.review) {
+      p.innerText = data.review;
+    }
     image.append(i);
     content.append(span, p);
     box.append(image, content);
@@ -157,7 +172,7 @@ fetch("http://localhost:3000/Product")
       imga.href = "product.html#" + data[i].id;
       img.src = data[i].imgs;
       productname.innerText = data[i].name;
-      minprice.innerText = "$" + data[i].price.min_price;
+      minprice.innerText = data[i].price.min_price;
       span.innerText = "-";
       maxprice.innerText = data[i].price.max_price;
       price.append(minprice, span, maxprice);

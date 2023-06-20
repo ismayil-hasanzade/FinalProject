@@ -211,7 +211,6 @@ const usersimage = document.querySelector(".usersimage");
 
 if (localStorage.getItem("users") !== null) {
   usersimage.style.display = "block";
-  console.log("test");
 } else {
   usersimage.style.display = "none";
 }

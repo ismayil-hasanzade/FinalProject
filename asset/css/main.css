@@ -55,7 +55,7 @@ header nav .usersimage {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  z-index: 9999;
+  z-index: 1;
   right: 15px;
   bottom: -15px;
 }
@@ -1477,6 +1477,42 @@ main #map iframe {
     width: 100%;
   }
 }
+main #posting .container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  padding: 40px;
+}
+main #posting .container form input {
+  width: 20%;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.384);
+  background-color: rgba(0, 0, 0, 0.039);
+  font-size: 15px;
+}
+main #posting .container form .colors {
+  display: flex;
+  gap: 10px;
+}
+main #posting .container form .categorya,
+main #posting .container form .categoryb {
+  display: flex;
+  align-items: center;
+}
+main #posting .container form #post {
+  transition: 400ms;
+  cursor: pointer;
+}
+main #posting .container form #post:hover {
+  background-color: #c39e88;
+  color: white;
+}
+
 main #featuredproducts.help {
   background-color: #f1f2f2;
 }

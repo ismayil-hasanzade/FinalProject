@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,6 +15,9 @@
   </head>
   <body>
     <header id="header">
+      <div class="usersimage">
+        <i class="fa-solid fa-circle-user"></i>
+      </div>
       <nav id="nav">
         <div class="search">
           <input type="text" placeholder="Search..." />
@@ -33,7 +36,7 @@
             <div class="categorynav">
               <ul>
                 <a href="./shop.html">
-                  <li >SHOP ALL</li>
+                  <li>SHOP ALL</li>
                 </a>
                 <a href="./decor.html"> <li>Decor</li> </a
                 ><a href="./office.html"> <li>Office</li> </a
@@ -55,7 +58,9 @@
                   <a href="contact.html">Contact</a>
                 </li>
                 <li>
-                  <a href="track_order.html" style="color: #c19a83">Track Order</a>
+                  <a href="track_order.html" style="color: #c19a83"
+                    >Track Order</a
+                  >
                 </li>
                 <li>
                   <a href="help.html">Help</a>
@@ -77,7 +82,7 @@
           <div class="categorynav">
             <ul>
               <a href="./shop.html">
-                <li >SHOP ALL</li>
+                <li>SHOP ALL</li>
               </a>
               <a href="./decor.html"> <li>Decor</li> </a
               ><a href="./office.html"> <li>Office</li> </a
@@ -99,7 +104,9 @@
                 <a href="contact.html">Contact</a>
               </li>
               <li>
-                <a href="track_order.html" style="color: #c19a83">Track Order</a>
+                <a href="track_order.html" style="color: #c19a83"
+                  >Track Order</a
+                >
               </li>
               <li>
                 <a href="help.html">Help</a>
@@ -138,32 +145,65 @@
       </div>
     </header>
     <main>
-      <section id="login">
+      <section id="posting">
         <div class="container">
-          <div class="account">
-            <h3>My Account</h3>
-          </div>
-          <div class="login">
-            <form action="">
-              <h2>Login</h2>
-              <div class="user">
-                <p>Username or email address<sup>*</sup></p>
-                <input type="text" placeholder="Username or email address *" />
-              </div>
-              <div class="password">
-                <p>Password<sup>*</sup></p>
-                <input type="password" placeholder="Password *">
-                <i class="fa-regular fa-eye"></i>
-              </div>
-              
-              <div class="remember">
-                <div class="check" id="check"></div>
-                <span>Remember me</span>
-              </div>
-              <input type="button" class="loginbtn" value="Log in">
-              <a href="">Lost your password?</a>
-            </form>
-          </div>
+          <form action="">
+            <label for="name">Name</label>
+            <input type="text" id="name" />
+            <div class="colors">
+              <p>black</p>
+              <input type="radio" name="color" />
+              <p>bronze</p>
+              <input type="radio" name="color" />
+              <p>gold</p>
+              <input type="radio" name="color" />
+            </div>
+            <label for="minprice">Minprice</label>
+            <input type="number" id="minprice" />
+            <label for="minprice">Maxnprice</label>
+            <input type="number" id="maxprice" />
+            <label for="blackmax">Blackmax</label>
+            <input type="number" id="blackmax" />
+            <label for="bronzemax">Bronzemax</label>
+            <input type="number" id="bronzemax" />
+            <label for="goldmax">Goldmax</label>
+            <input type="number" id="goldmax" />
+            <div class="categorya">
+              <p>CategoryA</p>
+              <p>Decor</p>
+              <input type="radio" name="categorya" />
+              <p>Office</p>
+              <input type="radio" name="categorya" />
+              <p>Living Room</p>
+              <input type="radio" name="categorya" />
+              <p>Bedroom</p>
+              <input type="radio" name="categorya" />
+            </div>
+            <div class="categoryb">
+              <p>CategoryB</p>
+              <p>Decor</p>
+              <input type="radio" name="categoryb" />
+              <p>Office</p>
+              <input type="radio" name="categoryb" />
+              <p>Living Room</p>
+              <input type="radio" name="categoryb" />
+              <p>Bedroom</p>
+              <input type="radio" name="categoryb" />
+            </div>
+            <label for="stock">Stock</label>
+            <input type="number" id="stock" />
+            <label for="imgs">Image</label>
+            <input type="text" id="imgs" />
+            <label for="min_imgs">Min Image</label>
+            <input type="text" id="min_imgs" />
+            <label for="blackimage">Black image</label>
+            <input type="text" id="blackimage" />
+            <label for="bronzeimage">Bronze Image</label>
+            <input type="text" id="bronzeimage" />
+            <label for="goldimage">Gold Image</label>
+            <input type="text" id="goldimage" />
+            <input type="button" value="Post" id="post" />
+          </form>
         </div>
       </section>
     </main>
@@ -226,4 +266,4 @@
     <script src="./asset/script/nav.js"></script>
     <script src="./asset/script/track_order.js"></script>
   </body>
-</html> -->
+</html>

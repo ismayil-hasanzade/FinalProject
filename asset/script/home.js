@@ -64,7 +64,7 @@ fetch("http://localhost:3000/Product")
       categorys.appendChild(box);
     }
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
       const id = data[i].id;
       const min_price = data[i].price.min_price;
       const max_price = data[i].price.max_price;
@@ -145,7 +145,7 @@ fetch("http://localhost:3000/Product")
           });
       });
 
-      // Reng değiştirme //
+      // Reng deyishme //
 
       black.addEventListener("click", () => {
         img.src = black_img;

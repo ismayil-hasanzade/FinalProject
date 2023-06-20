@@ -92,7 +92,7 @@ fetch(`http://localhost:3000/Product`)
             });
         });
 
-        // Reng değiştirme //
+        // Reng deyisme //
 
         black.addEventListener("click", () => {
           img.src = black_img;
@@ -177,26 +177,33 @@ fetch(`http://localhost:3000/Product`)
           basket_arr = JSON.parse(localStorage.getItem("basket"));
         }
         basket.addEventListener("click", () => {
-          if (basket_arr.find((x) => x.id === element.id) === undefined) {
-            basket_arr.push({
-              ...element,
-              count: 1,
-              main_color: img.src,
-              color: color_name,
-            });
-          } else {
-            if (
-              basket_arr.find((x) => x.main_color === img.src) === undefined
-            ) {
+          if (localStorage.getItem("users") !== null) {
+            if (basket_arr.find((x) => x.id === data[i].id) === undefined) {
               basket_arr.push({
-                ...element,
+                ...data[i],
                 count: 1,
                 main_color: img.src,
                 color: color_name,
               });
+              window.location.reload();
+            } else {
+              if (
+                basket_arr.find((x) => x.main_color === img.src) === undefined
+              ) {
+                basket_arr.push({
+                  ...data[i],
+                  count: 1,
+                  main_color: img.src,
+                  color: color_name,
+                });
+                window.location.reload();
+              }
             }
+            localStorage.setItem("basket", JSON.stringify(basket_arr));
+          } else {
+            alert("Login Edin");
+            window.open("login.html");
           }
-          localStorage.setItem("basket", JSON.stringify(basket_arr));
         });
       }
     });

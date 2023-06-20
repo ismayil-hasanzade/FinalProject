@@ -1,0 +1,42 @@
+main {
+  #posting {
+    .container {
+      form {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        align-items: center;
+        gap: 10px;
+        padding: 40px;
+        input {
+          width: 20%;
+          border: none;
+          outline: none;
+          padding: 5px;
+          border-radius: 20px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.384);
+          background-color: rgba(0, 0, 0, 0.039);
+          font-size: 15px;
+        }
+        .colors {
+          display: flex;
+          gap: 10px;
+        }
+        .categorya,
+        .categoryb {
+          display: flex;
+          align-items: center;
+        }
+        #post {
+          transition: 400ms;
+          cursor: pointer;
+          &:hover {
+            background-color: #c39e88;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
