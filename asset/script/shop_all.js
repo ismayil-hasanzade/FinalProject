@@ -6,6 +6,8 @@ fetch(`http://localhost:3000/Product`)
   .then((res) => res.json())
   .then((data) => {
     data.forEach((element) => {
+      let basket_arr = [];
+
       count++;
       const id = element.id;
       const min_price = element.price.min_price;
@@ -56,7 +58,6 @@ fetch(`http://localhost:3000/Product`)
       black.className = "black";
       gold.className = "gold";
       sale.innerText = "Sale";
-      basketa.href = "product.html#" + element.id;
       imga.href = "product.html#" + element.id;
       img.src = element.imgs;
       productname.innerText = element.name;
@@ -135,6 +136,12 @@ fetch(`http://localhost:3000/Product`)
           minprice.innerText = min_price;
           maxprice.innerText = max_price;
         }
+      });
+      basket.addEventListener("click", () => {
+        if (basket_arr.find((x) => x.id === element.id) === undefined) {
+          basket_arr.push({ ...element, count: 1 });
+        }
+        localStorage.setItem("basket", JSON.stringify(basket_arr));
       });
     });
     showingp.innerText = "Showing " + count + " Results";

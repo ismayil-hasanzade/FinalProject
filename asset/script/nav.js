@@ -12,6 +12,9 @@ const back = document.querySelector(".back");
 const shoppingmenu = document.querySelector(".shoppingmenu");
 const shopping_content = document.querySelector(".shopping_content");
 const productvalue = document.querySelector(".productvalue");
+const basketlip = document.querySelector(".basketli p");
+const totalsum = document.querySelector(".totalsum p");
+totalsum.innerText = "0";
 navbtn.addEventListener("click", () => {
   navbtn.style.cssText = "display:none";
   secretmenu.classList.toggle("change");
@@ -86,7 +89,12 @@ back.addEventListener("click", () => {
   enableScroll();
 });
 //basket append//
+
 basket_arr = JSON.parse(localStorage.getItem("basket"));
+if (!basket_arr) {
+  basket_arr = [];
+}
+
 basket_arr.forEach((element) => {
   const productbox = document.createElement("div");
   const productabout = document.createElement("div");
@@ -114,12 +122,16 @@ basket_arr.forEach((element) => {
   sumbox.className = "sumbox";
   productminus.className = "productminus";
   productnumber.className = "productnumber";
-  productplus.className = "productbox";
+  productplus.className = "productplus";
   productclose.className = "productclose";
   closebtn.className = "fa-regular fa-circle-xmark";
-  productvalue.className = "productbox";
+  productvalue.className = "productvalue";
+  productminus.innerText = "-";
+  productplus.innerText = "+";
+  productnumber.innerText = "1";
+
   productbox.append(productabout, productclose);
-  productabout.append(productimage, productcontent);
+  productabout.append(productimagediv, productcontent);
   productimagediv.append(producta);
   producta.append(productimage);
   productcontent.append(productname, sumbox);
@@ -128,12 +140,64 @@ basket_arr.forEach((element) => {
   productclose.append(closebtn, productvalue);
   producta.href = "product.html#" + element.id;
   producta.target = "_blank";
-  productimage.src = element.min_imgs;
+  productimage.src = element.imgs;
   productnamea.href = "product.html#" + element.id;
   productnamea.innerText = element.name;
   p.innerText = "-";
   productcolor.innerText = element.color;
-  productvalue.innerText = element.price.min_price;
+  productvalue.innerText = "$" + element.price.min_price;
   shopping_content.appendChild(productbox);
-  console.log(element.min_imgs);
+  closebtn.addEventListener("click", () => {
+    removeProductFromLocalStorage(element.id);
+    productbox.remove();
+    updateTotalSum();
+  });
+  let sum = +element.price.min_price;
+
+  productplus.addEventListener("click", () => {
+    productnumber.innerText++;
+    sum += +element.price.min_price;
+    productvalue.innerText = "$" + sum;
+    updateTotalSum();
+  });
+  productminus.addEventListener("click", () => {
+    if (productnumber.innerText != 0) {
+      productnumber.innerText--;
+      sum -= +element.price.min_price;
+      productvalue.innerText = "$" + sum;
+      productvalue.innerText = "$" + sum;
+
+      updateTotalSum();
+      if (productnumber.innerText == "0") {
+        removeProductFromLocalStorage(element.id);
+        productbox.remove();
+      }
+    }
+  });
+  const productValues = document.querySelectorAll(
+    ".shopping_content .productvalue"
+  );
+  function updateTotalSum() {
+    let sumproductvalues = 0;
+    const productValues = document.querySelectorAll(
+      ".shopping_content .productvalue"
+    );
+    productValues.forEach((element) => {
+      sumproductvalues += parseFloat(element.innerText.slice(1));
+    });
+    totalsum.innerText = "$" + sumproductvalues.toFixed(2);
+    const productnumber = document.querySelectorAll(".productnumber");
+    let productnumbercount = 0;
+    productnumber.forEach((element) => {
+      productnumbercount += +element.innerText;
+    });
+    basketlip.innerText = productnumbercount;
+  }
+
+  updateTotalSum();
 });
+function removeProductFromLocalStorage(productId) {
+  let basketArr = JSON.parse(localStorage.getItem("basket"));
+  basketArr = basketArr.filter((item) => item.id !== productId);
+  localStorage.setItem("basket", JSON.stringify(basketArr));
+}

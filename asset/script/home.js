@@ -204,7 +204,7 @@ fetch("http://localhost:3000/Product")
       if (localStorage.getItem("basket") !== null) {
         basket_arr = JSON.parse(localStorage.getItem("basket"));
       }
-      // Sepete ekleme //
+      // Basket //
       basket.addEventListener("click", () => {
         if (basket_arr.find((x) => x.id === data[i].id) === undefined) {
           basket_arr.push({ ...data[i], count: 1 });
