@@ -224,11 +224,11 @@ fetch("http://localhost:3000/Product")
       imga.addEventListener("click", () => {
         localStorage.setItem("color", JSON.stringify(color_name));
       });
+
+      // Basket //
       if (localStorage.getItem("basket") !== null) {
         basket_arr = JSON.parse(localStorage.getItem("basket"));
       }
-      // Basket //
-
       basket.addEventListener("click", () => {
         if (basket_arr.find((x) => x.id === data[i].id) === undefined) {
           basket_arr.push({

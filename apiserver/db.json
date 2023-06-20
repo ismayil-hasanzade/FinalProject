@@ -22,7 +22,10 @@
         "category_a": "Bedroom",
         "category_b": "Office"
       },
-      "stock": 15
+      "stock": 15,
+      "review": "",
+      "commentname": "",
+      "email": ""
     },
     {
       "id": 2,

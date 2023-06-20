@@ -96,6 +96,9 @@ main {
           width: 30px;
           border-radius: 50%;
           border: 3px solid white;
+          &:hover {
+            cursor: pointer;
+          }
         }
         .black {
           background-color: black;

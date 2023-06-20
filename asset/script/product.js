@@ -10,10 +10,17 @@ const moreimga = document.querySelector(".moreimga");
 const moreimgb = document.querySelector(".moreimgb");
 const color = JSON.parse(localStorage.getItem("color"));
 const categorys = document.querySelector(".categorys");
-
+const black = document.querySelector(".black");
+const bronze = document.querySelector(".bronze");
+const gold = document.querySelector(".gold");
+const minus = document.querySelector(".minus");
+const plus = document.querySelector(".plus");
+const productsum = document.querySelector(".box .sum");
+const addbutton = document.querySelector(".addbutton");
 fetch(`http://localhost:3000/Product/${id}`)
   .then((res) => res.json())
   .then((data) => {
+    let color_name = data.color;
     basisimage.src = data.colors_imgs[color];
     if (basisimage.src == data.colors_imgs.black) {
       moreimga.src = data.colors_imgs.bronze;
@@ -25,13 +32,80 @@ fetch(`http://localhost:3000/Product/${id}`)
       moreimga.src = data.colors_imgs.gold;
       moreimgb.src = data.colors_imgs.black;
     }
+    black.addEventListener("click", () => {
+      basisimage.src = data.colors_imgs.black;
+      moreimga.src = data.colors_imgs.bronze;
+      moreimgb.src = data.colors_imgs.gold;
+    });
+    gold.addEventListener("click", () => {
+      basisimage.src = data.colors_imgs.gold;
+      moreimga.src = data.colors_imgs.bronze;
+      moreimgb.src = data.colors_imgs.black;
+    });
+    bronze.addEventListener("click", () => {
+      basisimage.src = data.colors_imgs.bronze;
+      moreimga.src = data.colors_imgs.gold;
+      moreimgb.src = data.colors_imgs.black;
+    });
     categorya.innerText = data.categorys.category_a + "/";
     categoryb.innerText = data.categorys.category_b + "/";
     productnameh3.innerText = data.name;
-    minprice.innerText = "$" + data.price.min_price + "-";
+    minprice.innerText = "$" + data.price.min_price;
     maxprice.innerText = data.price.max_price;
-  });
+    productsum.innerText = "1";
+    plus.addEventListener("click", () => {
+      productsum.innerText++;
+    });
+    minus.addEventListener("click", () => {
+      if (productsum.innerText > 1) {
+        productsum.innerText--;
+      }
+    });
 
+    let basket_arr = [];
+    if (localStorage.getItem("basket") !== null) {
+      basket_arr = JSON.parse(localStorage.getItem("basket"));
+    }
+    //Baskete Elave etme//
+    addbutton.addEventListener("click", () => {
+      if (basket_arr.find((x) => x.id === data.id) === undefined) {
+        basket_arr.push({
+          ...data,
+          count: productsum.innerText,
+          main_color: basisimage.src,
+          color: color_name,
+        });
+      } else {
+        if (
+          basket_arr.find((x) => x.main_color === basisimage.src) === undefined
+        ) {
+          basket_arr.push({
+            ...data,
+            count: productsum.innerText,
+            main_color: basisimage.src,
+            color: color_name,
+          });
+        }
+      }
+      localStorage.setItem("basket", JSON.stringify(basket_arr));
+    });
+    const commentsbox = document.querySelector(".commentsbox");
+    const box = document.createElement("div");
+    box.className = "box";
+    const image = document.createElement("div");
+    image.className = "image";
+    const i = document.createElement("i");
+    i.className = "fa-solid fa-user";
+    const content = document.createElement("content");
+    content.className = "content";
+    const span = document.createElement("span");
+    const p = document.createElement("p");
+    image.append(i);
+    content.append(span, p);
+    box.append(image, content);
+    commentsbox.appendChild(box);
+  });
+//
 fetch("http://localhost:3000/Product")
   .then((res) => res.json())
   .then((data) => {
@@ -137,3 +211,28 @@ fetch("http://localhost:3000/Product")
       });
     }
   });
+
+// //Commentleri Api a gondermek//
+// const submitbtn = document.querySelector(".submitbtn");
+// const nameinput = document.querySelector(".name input");
+// const email = document.querySelector(".email input");
+// const textarea = document.querySelector(".textarea");
+
+// submitbtn.addEventListener("click", () => {
+//   console.log("test");
+//   if (nameinput.value == "" || email.value == "" || textarea.value == "") {
+//     alert("Inputlari tam doldurun");
+//   } else {
+//     fetch(`http://localhost:3000/Product/${id}/`, {
+//       method: "POST",
+//       body: JSON.stringify({
+//         review: textarea.value,
+//         commentname: nameinput.value,
+//         email: email.value,
+//       }),
+//       headers: {
+//         "Content-type": "application/json; charset=UTF-8",
+//       },
+//     });
+//   }
+// });

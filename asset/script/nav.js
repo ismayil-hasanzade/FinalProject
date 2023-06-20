@@ -154,10 +154,11 @@ basket_arr.forEach((element) => {
     updateTotalSum();
   });
   let sum = +element.price.min_price;
-
+  productvalue.innerText = "$" + element.count * sum;
   productplus.addEventListener("click", () => {
     productnumber.innerText++;
-    sum = productnumber.innerText * element.price.min_price;
+    sum = +productnumber.innerText * element.price.min_price;
+
     productvalue.innerText = "$" + sum;
     basket_arr[basket_arr.findIndex((x) => element.id === x.id)].count++;
     localStorage.setItem("basket", JSON.stringify(basket_arr));
@@ -166,8 +167,7 @@ basket_arr.forEach((element) => {
   productminus.addEventListener("click", () => {
     if (productnumber.innerText != 0) {
       productnumber.innerText--;
-      sum -= +element.price.min_price;
-      sum *= element.count;
+      sum = +productnumber.innerText * element.price.min_price;
       productvalue.innerText = "$" + sum;
       basket_arr[basket_arr.findIndex((x) => element.id === x.id)].count--;
       localStorage.setItem("basket", JSON.stringify(basket_arr));

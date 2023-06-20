@@ -1843,6 +1843,9 @@ main #product .container .colors div {
   border-radius: 50%;
   border: 3px solid white;
 }
+main #product .container .colors div:hover {
+  cursor: pointer;
+}
 main #product .container .colors .black {
   background-color: black;
 }
