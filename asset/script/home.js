@@ -50,15 +50,14 @@ fetch("http://localhost:3000/Product")
       const abouts = document.createElement("div");
       const span = document.createElement("span");
       const p = document.createElement("p");
-
       box.className = "box";
       abouts.className = "abouts";
       img.src = data[i].min_imgs;
       span.innerText = data[i].categorys.category_a;
       p.innerText = data[i].stock + " Products";
-      a.href = "product.html";
-      a.target = "_blank";
-
+      let categoryname = data[i].categorys.category_a;
+      let new_category = categoryname.replace(/\s/g, "");
+      a.href = new_category.toLowerCase() + ".html";
       abouts.append(span, p);
       a.append(img);
       box.append(a, abouts);
@@ -97,7 +96,6 @@ fetch("http://localhost:3000/Product")
       const black = document.createElement("div");
       const bronze = document.createElement("div");
       const gold = document.createElement("div");
-
       box.className = "box";
       sale.className = "sale";
       options.className = "options";
@@ -117,7 +115,6 @@ fetch("http://localhost:3000/Product")
       black.className = "black";
       gold.className = "gold";
       sale.innerText = "Sale";
-
       imga.href = "product.html#" + data[i].id;
       img.src = data[i].imgs;
       productname.innerText = data[i].name;
@@ -134,7 +131,8 @@ fetch("http://localhost:3000/Product")
       options.append(basket, view);
       box.append(sale, options, imga, productabout);
       featurecategories.appendChild(box);
-
+      let color_name = data[i].color;
+      let color = data[i].color;
       // ELEMENT REMOVE //
       deleti.addEventListener("click", () => {
         box.remove();
@@ -148,12 +146,16 @@ fetch("http://localhost:3000/Product")
       });
 
       // Reng değiştirme //
+
       black.addEventListener("click", () => {
         img.src = black_img;
+
         if (
           minprice.innerText === min_price &&
           maxprice.innerText === max_price
         ) {
+          color_name = "black";
+          localStorage.setItem("color", JSON.stringify(color_name));
           span.style.display = "none";
           minprice.style.opacity = "50%";
           minprice.innerHTML = `<del>${black_max}</del>`;
@@ -163,16 +165,24 @@ fetch("http://localhost:3000/Product")
           minprice.style.opacity = "100%";
           minprice.innerText = min_price;
           maxprice.innerText = max_price;
+          img.src = data[i].imgs;
+          color_name = data[i].color;
+          color = data[i].color;
+          localStorage.setItem("color", JSON.stringify(color));
         }
       });
 
       bronze.addEventListener("click", () => {
         img.src = bronze_img;
+
         if (
           minprice.innerText === min_price &&
           maxprice.innerText === max_price
         ) {
+          color_name = "bronze";
           span.style.display = "none";
+          localStorage.setItem("color", JSON.stringify(color_name));
+
           minprice.style.opacity = "50%";
           minprice.innerHTML = `<del>${bronze_max}</del>`;
           maxprice.innerHTML = min_price;
@@ -181,6 +191,10 @@ fetch("http://localhost:3000/Product")
           minprice.style.opacity = "100%";
           minprice.innerText = min_price;
           maxprice.innerText = max_price;
+          img.src = data[i].imgs;
+          color_name = data[i].color;
+          color = data[i].color;
+          localStorage.setItem("color", JSON.stringify(color));
         }
       });
 
@@ -190,6 +204,8 @@ fetch("http://localhost:3000/Product")
           minprice.innerText === min_price &&
           maxprice.innerText === max_price
         ) {
+          color_name = "gold";
+          localStorage.setItem("color", JSON.stringify(color_name));
           span.style.display = "none";
           minprice.style.opacity = "50%";
           minprice.innerHTML = `<del>${gold_max}</del>`;
@@ -199,15 +215,37 @@ fetch("http://localhost:3000/Product")
           minprice.style.opacity = "100%";
           minprice.innerText = min_price;
           maxprice.innerText = max_price;
+          img.src = data[i].imgs;
+          color_name = data[i].color;
+          color = data[i].color;
+          localStorage.setItem("color", JSON.stringify(color));
         }
+      });
+      imga.addEventListener("click", () => {
+        localStorage.setItem("color", JSON.stringify(color_name));
       });
       if (localStorage.getItem("basket") !== null) {
         basket_arr = JSON.parse(localStorage.getItem("basket"));
       }
       // Basket //
+
       basket.addEventListener("click", () => {
         if (basket_arr.find((x) => x.id === data[i].id) === undefined) {
-          basket_arr.push({ ...data[i], count: 1 });
+          basket_arr.push({
+            ...data[i],
+            count: 1,
+            main_color: img.src,
+            color: color_name,
+          });
+        } else {
+          if (basket_arr.find((x) => x.main_color === img.src) === undefined) {
+            basket_arr.push({
+              ...data[i],
+              count: 1,
+              main_color: img.src,
+              color: color_name,
+            });
+          }
         }
         localStorage.setItem("basket", JSON.stringify(basket_arr));
       });

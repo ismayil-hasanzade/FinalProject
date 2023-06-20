@@ -1,0 +1,103 @@
+{
+  "Product": [
+    {
+      "id": 1,
+      "name": "Product Name1",
+      "color": "black",
+      "price": {
+        "min_price": "100",
+        "max_price": "$200",
+        "black_max": "$305",
+        "gold_max": "$405",
+        "bronze_max": "$245"
+      },
+      "imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-09-a-600x731.jpg",
+      "min_imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/cat-1-600x600.jpg",
+      "colors_imgs": {
+        "black": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-09-a-600x731.jpg",
+        "bronze": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-09-b-400x488.jpg",
+        "gold": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-09-c-400x488.jpg"
+      },
+      "categorys": {
+        "category_a": "Bedroom",
+        "category_b": "Office"
+      },
+      "stock": 15
+    },
+    {
+      "id": 2,
+      "name": "Product Name2",
+      "color": "gold",
+      "price": {
+        "min_price": "101",
+        "max_price": "$201",
+        "black_max": "$306",
+        "gold_max": "$406",
+        "bronze_max": "$247"
+      },
+      "imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-01-c-600x731.jpg",
+      "min_imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/cat-4-600x600.jpg",
+
+      "colors_imgs": {
+        "black": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-01-a-400x488.jpg",
+        "bronze": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-01-b-400x488.jpg",
+        "gold": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-01-c-400x488.jpg"
+      },
+      "categorys": {
+        "category_a": "Decor",
+        "category_b": "Office"
+      },
+      "stock": 15
+    },
+    {
+      "id": 3,
+      "name": "Product Name3",
+      "color": "black",
+      "price": {
+        "min_price": "102",
+        "max_price": "$203",
+        "black_max": "$307",
+        "gold_max": "$408",
+        "bronze_max": "247"
+      },
+      "imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-14-a-600x731.jpg",
+      "min_imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/cat-1-600x600.jpg",
+
+      "colors_imgs": {
+        "black": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-14-a-600x731.jpg",
+        "bronze": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-14-b-600x731.jpg",
+        "gold": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-14-c-600x731.jpg"
+      },
+      "categorys": {
+        "category_a": "Living Room",
+        "category_b": "Office"
+      },
+      "stock": 15
+    },
+    {
+      "id": 4,
+      "name": "Product Name4",
+      "color": "bronze",
+      "price": {
+        "min_price": "108",
+        "max_price": "$220",
+        "black_max": "$315",
+        "gold_max": "$455",
+        "bronze_max": "225"
+      },
+      "imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-15-b-600x731.jpg",
+      "min_imgs": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/cat-3-600x600.jpg",
+
+      "colors_imgs": {
+        "black": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-15-a-600x731.jpg",
+        "bronze": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-15-b-600x731.jpg",
+        "gold": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-15-c-600x731.jpg"
+      },
+      "categorys": {
+        "category_a": "Office",
+        "category_b": "Office"
+      },
+      "stock": 15
+    }
+  ]
+}

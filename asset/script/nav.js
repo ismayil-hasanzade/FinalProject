@@ -128,7 +128,7 @@ basket_arr.forEach((element) => {
   productvalue.className = "productvalue";
   productminus.innerText = "-";
   productplus.innerText = "+";
-  productnumber.innerText = "1";
+  productnumber.innerText = element.count;
 
   productbox.append(productabout, productclose);
   productabout.append(productimagediv, productcontent);
@@ -140,7 +140,8 @@ basket_arr.forEach((element) => {
   productclose.append(closebtn, productvalue);
   producta.href = "product.html#" + element.id;
   producta.target = "_blank";
-  productimage.src = element.imgs;
+  productimage.src = element.main_color;
+
   productnamea.href = "product.html#" + element.id;
   productnamea.innerText = element.name;
   p.innerText = "-";
@@ -156,17 +157,20 @@ basket_arr.forEach((element) => {
 
   productplus.addEventListener("click", () => {
     productnumber.innerText++;
-    sum += +element.price.min_price;
+    sum = productnumber.innerText * element.price.min_price;
     productvalue.innerText = "$" + sum;
+    basket_arr[basket_arr.findIndex((x) => element.id === x.id)].count++;
+    localStorage.setItem("basket", JSON.stringify(basket_arr));
     updateTotalSum();
   });
   productminus.addEventListener("click", () => {
     if (productnumber.innerText != 0) {
       productnumber.innerText--;
       sum -= +element.price.min_price;
+      sum *= element.count;
       productvalue.innerText = "$" + sum;
-      productvalue.innerText = "$" + sum;
-
+      basket_arr[basket_arr.findIndex((x) => element.id === x.id)].count--;
+      localStorage.setItem("basket", JSON.stringify(basket_arr));
       updateTotalSum();
       if (productnumber.innerText == "0") {
         removeProductFromLocalStorage(element.id);
